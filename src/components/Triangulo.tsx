@@ -1,8 +1,10 @@
 import React from 'react'
-
-export default function Triangulo() {
+type props = {
+  className?: string
+}
+export default function Triangulo({className } : props) {
   return (
-    <div className='border-r-[150px]  border-b-[290px] border-r-blue-300 border-l-blue-300 border-t-[290px] border-transparent'>
+    <div className={` absolute border-r-[150px]  border-b-[290px] border-t-[290px] border-transparent ${className}`}>
     </div>
   )
 }
