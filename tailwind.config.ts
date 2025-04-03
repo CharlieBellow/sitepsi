@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 export default {
   content: [
@@ -9,17 +9,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        ciano: {
+          1: 'hsl(var(--ciano-1))',
+          2: 'hsl(var(--ciano-2))',
+          3: "hsl(var(--ciano-3))",
+          4: "hsl(var(--ciano-4))",
+          5: "hsl(var(--ciano-5))",
+        },
+        primary: "hsl(var(--primary))",
+        fundo: "hsl(var(--fundo))",
       },
     },
   },
-  color: {
-    primary: 'hsl(var(--primary))',
-    ciano: {
-    }
-    // "ciano-1": #49D5BB, 
-    // "blue-bg": 1E2462,
-  },
   plugins: [],
-} satisfies Config;
+} satisfies Config

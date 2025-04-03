@@ -4,12 +4,23 @@
 
 :root {
  
+  --primary: hsl(161, 46%, 75%) , /* #A3DDCB 199 100% 43% - TRANSFORMAR EM hsl */ 
+  --fundo: 	hsl(235, 53%, 25%), /* #1E2462 */
+  --ciano-1: 	hsl(173, 51%, 51%)  /* #44C2B4 */
+  --ciano-2: 	hsl(184, 46%, 41%) /* #389298 */
+  --ciano-3: 	hsl(191, 46%, 38%) /* #347D8E */
+  --ciano-4: 	hsl(207, 47%, 33%) /* #2D597C */
+  --ciano-5: 	hsl(218, 51%, 29%)/*  #243F6E */
+  /* gradiente: 
+   0 181753 100% hsl(241, 57%, 21%)
+   50 1C1E59 100% hsl(238, 52%, 23%)
+   100 1C255E 100% 	hsl(232, 54%, 24%)
+   */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #A3DDCB, /* 199 100% 43% - TRANSFORMAR EM hsl */ 
-
+    
   }
 }
 
