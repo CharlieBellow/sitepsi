@@ -14,5 +14,12 @@ export default {
       },
     },
   },
+  color: {
+    primary: 'hsl(var(--primary))',
+    ciano: {
+    }
+    // "ciano-1": #49D5BB, 
+    // "blue-bg": 1E2462,
+  },
   plugins: [],
 } satisfies Config;
