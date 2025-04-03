@@ -4,10 +4,12 @@ type props = {
 }
 export default function Triangulo({className } : props) {
   return (
-    <div className={` absolute border-r-[150px]  border-b-[290px] border-t-[290px] border-transparent ${className}`}>
+    // <div className={` absolute border-r-[150px]  border-b-[290px] border-t-[290px] border-transparent  ${className}`}>
 
-{/* <div className={` absolute w-[400px] h-[600px] rotate-45 ${className}`}>
-</div> */}
-    </div>
+      
+  <div className={` absolute w-[350px] h-[430px] rotate-45 shadow-2xl rounded-sm ${className}`}>
+</div>
+
+
   )
 }
