@@ -7,6 +7,11 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    gradientColorStops: {
+      'primary': '#181753',
+      'secondary': '#1C1E59',
+      'danger': '#1C255E',
+    },
     extend: {
       colors: {
         ciano: {

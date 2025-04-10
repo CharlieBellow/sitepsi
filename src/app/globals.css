@@ -11,6 +11,10 @@
   --ciano-3: 	hsl(191, 46%, 38%) /* #347D8E */
   --ciano-4: 	hsl(207, 47%, 33%) /* #2D597C */
   --ciano-5: 	hsl(218, 51%, 29%)/*  #243F6E */
+
+  --gradient-primary: hsl(241, 57%, 21%)
+  --gradient-secondary: hsl(238, 52%, 23%)
+  --gradient-tertiary: hsl(232, 54%, 24%)
   /* gradiente: 
    0 181753 100% hsl(241, 57%, 21%)
    50 1C1E59 100% hsl(238, 52%, 23%)
