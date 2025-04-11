@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Background() {
   return (
-    <div className='relative left-[12rem] w-content h-[28rem] items-center flex  '>
+    <div className='relative left-[12rem] w-content h-[25rem] items-center flex -top-20 '>
       <Triangulo className="right-2 border-r-primary   z-50"/>
       <Triangulo className="-right-8 border-r-fundo   z-50"/>
       <Triangulo className="right-14 border-r-ciano-1 z-40"/>
