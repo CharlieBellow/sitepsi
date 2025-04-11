@@ -15,14 +15,15 @@ export default {
     extend: {
       colors: {
         ciano: {
-          1: 'hsl(var(--ciano-1))',
-          2: 'hsl(var(--ciano-2))',
-          3: "hsl(var(--ciano-3))",
-          4: "hsl(var(--ciano-4))",
-          5: "hsl(var(--ciano-5))",
+          1: '#44C4AD',
+          2: '#41B9AC',
+          3: "#35888E",
+          4: "#327888",
+          5: "#2C5779",
+          6: "#233E6B",
         },
-        primary: "hsl(var(--primary))",
-        fundo: "hsl(var(--fundo))",
+        primary: "#A3DDCB",
+        fundo: "#1E2462",
       },
     },
   },

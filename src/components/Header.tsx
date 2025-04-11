@@ -1,15 +1,13 @@
-import React from 'react'
-
 export default function Header() {
   return (
-    <header>
-      <ul className="flex justify-end items-center space-x-4">
-        <li>Início</li>
-        <li>Blog</li>
-        <li>Serviços</li>
-        <li>Sobre mim</li>
-        <li>Contato</li>
+    <div>
+      <ul className="flex w-full p-4 right-10 text-sm font-light z-50  absolute  text-white justify-end items-end space-x-4 ">
+        <li className="hover:text-primary cursor-pointer">Início</li>
+        <li className="hover:text-primary cursor-pointer">Blog</li>
+        <li className="hover:text-primary cursor-pointer">Serviços</li>
+        <li className="hover:text-primary cursor-pointer">Sobre mim</li>
+        <li className="hover:text-primary cursor-pointer">Contato</li>
       </ul>
-    </header>
+    </div>
   )
 }
