@@ -7,7 +7,7 @@ export default function CallToAction() {
       <h1 className='text-2xl font-bold'>Charlie Bellow de Oliveira Pimentel Silva</h1>
       <h2 className='text-xl font-bold'>Psicólogo - CRP 15/5997</h2>
       </div>
-      <p>
+      <p className='max-w-96'>
       Loren Ypsilum Loren Ypsilum Loren Ypsilum Loren Ypsilum Loren Ypsilum
       </p>
 
