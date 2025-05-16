@@ -1,0 +1,6 @@
+echo 'Check for lint error...'
+
+npm run check:fix || (echo 'Lint error found, please fix it.' && exit 1)
+
+
+echo 'Done.'

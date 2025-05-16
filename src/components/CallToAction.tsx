@@ -4,8 +4,8 @@ export default function CallToAction() {
   return (
     <div className=' px-8 retative text-white space-y-20 absolute z-90 text-lg'>
       <div className='text-lg'>
-      <h1 className='text-4xl font-bold'>Charlie Bellow de Oliveira Pimentel Silva</h1>
-      <h2 className='text-2xl font-bold'>Psicólogo - CRP 15/5997</h2>
+        <h1 className='text-4xl font-bold'>Charlie Bellow de Oliveira Pimentel Silva</h1>
+        <h2 className='text-2xl font-bold'>Psicólogo - CRP 15/5997</h2>
       </div>
       <p className='max-w-96'>
       Loren Ypsilum Loren Ypsilum Loren Ypsilum Loren Ypsilum Loren Ypsilum

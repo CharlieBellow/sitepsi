@@ -9,12 +9,12 @@ export default function Grid({title}: GridProps) {
       <h3 className='font-bold text-2xl'>{title}</h3>
 
       <div className='grid grid-cols-3 justify-center w-fit items-center gap-8 '>
-<CardBlog/>
-<CardBlog/>
-<CardBlog/>
-<CardBlog/>
-<CardBlog/>
-<CardBlog/>
+        <CardBlog/>
+        <CardBlog/>
+        <CardBlog/>
+        <CardBlog/>
+        <CardBlog/>
+        <CardBlog/>
       </div>
       
     </div>
