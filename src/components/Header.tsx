@@ -1,25 +1,70 @@
 import Image from "next/image"
-import logo from "../../assets/Charlie Beelow -logo/35.png"
+import logo from "../../assets/logo-charlie-certa-verde.png"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
+import Link from "next/link"
+
+import { FaBars } from "react-icons/fa";
+import { Button } from "@/components/ui/button";
+
+const navLinks = [
+  { href: "/", label: "Início" },
+  { href: "/blog", label: "Blog" },
+  { href: "/servicos", label: "Serviços" },
+  { href: "/sobre", label: "Sobre mim" },
+  { href: "/contato", label: "Contato" },
+]
 
 export default function Header() {
-  
   return (
-    <div className="flex justify-between md:items-center flex-col md:flex-row">
-      {/* trocar por uma logo com o nome branco */}
-      <Image src={logo} alt="Logomarca de Charlie" width={120} />
-      {/* adicionar float button - shadcn ou radix */}
-      <div className="flex md:hidden justify-end items-end w-full">
-        menu
-        {/* <Menu/> */}
+     <div className="relative z-50 flex items-center justify-between p-4">
+      <Link href="/">
+        <Image
+          src={logo}
+          alt="Logomarca de Charlie"
+          width={120}
+          className="p-2"
+        />
+      </Link>
+      <nav className="hidden md:block">
+        <ul className="flex flex-row gap-8 text-lg font-light text-white">
+          {navLinks.map((link) => (
+            <li key={link.href} className="cursor-pointer hover:text-primary">
+              <Link href={link.href}>{link.label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className="md:hidden">
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="outline" size="icon">
+              <FaBars className="h-4 w-4" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="mr-4 w-auto border-primary bg-fundo/95 text-white">
+            <nav>
+              <ul className="flex flex-col gap-4 p-2">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="cursor-pointer text-lg hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </PopoverContent>
+        </Popover>
       </div>
-      <ul className="flex flex-col md:flex-row gap-2 w-full p-4 right-10 text-sm font-light z-50  absolute lg:text-lg  text-white justify-end items-end space-x-4 ">
-        <li className="hover:text-primary cursor-pointer">Início</li>
-        <li className="hover:text-primary cursor-pointer">Blog</li>
-        <li className="hover:text-primary cursor-pointer">Serviços</li>
-        <li className="hover:text-primary cursor-pointer">Sobre mim</li>
-        <li className="hover:text-primary cursor-pointer">Contato</li>
-      </ul>
-    </div>
+        </div>
   )
 }

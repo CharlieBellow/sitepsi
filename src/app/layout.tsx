@@ -1,21 +1,22 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from "next"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Psicólogo Charlie",
   description: "Site do psicólogo Charlie",
-};
+  icons: {
+    icon: "/favicon.png",
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="pt-BR">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
-  );
+  )
 }
