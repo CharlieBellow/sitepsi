@@ -11,7 +11,7 @@ import Link from "next/link"
 import { FaBars } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
-const navLinks = [
+export const navLinks = [
   { href: "/", label: "Início" },
   { href: "/blog", label: "Blog" },
   { href: "/servicos", label: "Serviços" },
