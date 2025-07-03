@@ -4,7 +4,7 @@ import HomePage from "@/components/HomePage";
 
 
 export default function Home() {
-  return <div className="relative">
+  return <div className="relative overflow-hidden ">
     <link rel="icon" href="/c-charlie-verde.ico" sizes="any" />
     <HomePage />
     <Content />

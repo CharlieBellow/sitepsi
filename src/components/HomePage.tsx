@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <header
       className="overflow-hidden bg-gradient-to-br from-primary relative 
-       to-danger bg-cover "
+       to-danger bg-cover"
     >
       <Header />
 

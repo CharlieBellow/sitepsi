@@ -5,27 +5,30 @@ import Grid from "@/components/Grid"
 
 export default function Content() {
   return (
-    <main className="grid grid-cols-1 pt-10">
+    <main className="grid grid-cols-1 pt-10 h-full ">
       <Grid title="Blog">
-        {/* ajeitar o grid */}
-        <div className="grid grid-cols-3 gap-4">
-          <div className="">
+       {/* declarar uma variável e fazer um map aqui.. exibisndo apenas as 6 primeiras ocorrências */}
+        <div className="grid grid-cols-3 w-full justify-start gap-4">
+        
 
           <CardBlog title="BlogBlogBlogBlogBlogBlogBlogBlogBlogBlog" description=" Acesse nosso blog e fique por dentro de tudo que acontece no mundo da psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia.">
           </CardBlog>
-          </div>
-          <div>
+      
+       
 
           <CardBlog title="BlogBlogBlogBlogBlogBlogBlogBlogBlogBlog" description=" Acesse nosso blog e fique por dentro de tudo que acontece no mundo da psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia.">
           </CardBlog>
-          </div>
-          <div>
+       
+        
 
           <CardBlog title="BlogBlogBlogBlogBlogBlogBlogBlogBlogBlog" description=" Acesse nosso blog e fique por dentro de tudo que acontece no mundo da psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia.">
-          </CardBlog>
+            </CardBlog>
+
      
           
-          </div>
+          
+             <CardBlog title="BlogBlogBlogBlogBlogBlogBlogBlogBlogBlog" description=" Acesse nosso blog e fique por dentro de tudo que acontece no mundo da psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia psicologia.">
+          </CardBlog>
          
         </div>
       </Grid>
