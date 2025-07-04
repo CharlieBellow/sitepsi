@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import React, { ReactNode } from 'react'
 type CardBlogProps = {
   title: string,
@@ -8,7 +7,6 @@ type CardBlogProps = {
 }
 export default function CardBlog({children, description, title}: CardBlogProps ) {
   return (
-    <Link href="#">
     <div className='relative w-[26rem] h-44'>
       <div className='bg-ciano-4/20 shadow-lg w-96 absolute rounded-sm h-36 left-4 top-2'></div>
       <div className='bg-ciano-4/20 shadow-lg w-96 absolute rounded-sm h-36 left-2 top-4'></div>
@@ -22,6 +20,5 @@ export default function CardBlog({children, description, title}: CardBlogProps )
         </>
       </div>
     </div>
-    </Link>
   )
 }

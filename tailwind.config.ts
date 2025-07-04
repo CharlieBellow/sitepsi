@@ -24,7 +24,7 @@ export default {
   				'4': '#327888',
   				'5': '#2C5779',
   				'6': '#233E6B'
-  			},
+				},
   			primary: '#A3DDCB',
   			fundo: '#1E2462',
   			background: 'hsl(var(--background))',

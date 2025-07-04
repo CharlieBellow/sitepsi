@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <div className="bg-ciano-3 flex flex-col md:flex-row items-center justify-around p-4">
+    <footer className="bg-ciano-3 flex flex-col md:flex-row items-center justify-around p-4">
       <div className="">
       <Image
         src={logo}
@@ -30,6 +30,6 @@ export default function Footer() {
         </ul>
       </nav>
       </div>
-    </div>
+    </footer>
   )
 }

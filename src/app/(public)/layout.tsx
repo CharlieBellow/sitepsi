@@ -1,6 +1,7 @@
+import Footer from "@/components/Footer"
+import TopHead from "@/components/HomePage"
 import type { Metadata } from "next"
-import "./globals.css"
-
+import "../globals.css"
 
 export const metadata: Metadata = {
   title: "Psicólogo Charlie",
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className="">
-        <main className="h-screen ">{children}</main>
+        <TopHead />
+        <main className="h-screen relative overflow-hidden">{children}
+        </main>
+        <Footer />
       </body>
     </html>
   )
