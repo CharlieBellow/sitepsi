@@ -6,17 +6,18 @@ type PostProps = {
 
 export default function Post({ id }: PostProps) {
   
-  mockPosts.forEach((post) => {
-    if (post.id === id) {
-      return (
-       <div>
-       <div>{ post.title}</div>
-       <div>{ post.content}</div>
-       <div>{ post.views}</div>
-       </div>
-  )
-    }
-  });
+  const post = mockPosts.find((p) => p.id === id);
 
   
+  if (!post) {
+    return null; 
+  }
+
+  return (
+    <div>
+      <div>{post.title}</div>
+      <div dangerouslySetInnerHTML={{ __html: post.content }} />
+      <div>{post.views}</div>
+    </div>
+  );
 }

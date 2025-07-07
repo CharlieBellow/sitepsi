@@ -17,6 +17,7 @@ type LoginFormValues = Yup.InferType<typeof loginSchema>
 export function Login() {
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormValues>({
@@ -25,7 +26,7 @@ export function Login() {
   })
 
   const onSubmit = (data: LoginFormValues) => {
-    data.email = ""
+    reset(data)
   }
 
   return (
@@ -42,10 +43,10 @@ export function Login() {
         <Input
           type="password" label="Senha" {...register("password")} errorMessage={errors?.password?.message}/>
 
-      </form>
         <Button type="submit" className="mt-4 text-ciano-6" >
           Entrar
         </Button>
+      </form>
           </div> 
     </div>
   )

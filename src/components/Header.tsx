@@ -1,27 +1,21 @@
-import Image from "next/image"
-import logo from "../../assets/logo-charlie-certa-verde.png"
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import Image from "next/image"
+import logo from "../../assets/logo-charlie-certa-verde.png"
 
 import Link from "next/link"
 
-import { FaBars } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
+import { FaBars } from "react-icons/fa"
 
-export const navLinks = [
-  { href: "/", label: "Início" },
-  { href: "/blog", label: "Blog" },
-  { href: "/servicos", label: "Serviços" },
-  { href: "/sobre", label: "Sobre mim" },
-  { href: "/contato", label: "Contato" },
-]
+import { navLinks } from "../lib/constants"
 
 export default function Header() {
   return (
-     <div className="relative z-50 flex items-center justify-between p-4">
+    <div className="relative z-50 flex items-center justify-between p-4">
       <Link href="/">
         <Image
           src={logo}
@@ -65,6 +59,6 @@ export default function Header() {
           </PopoverContent>
         </Popover>
       </div>
-        </div>
+    </div>
   )
 }

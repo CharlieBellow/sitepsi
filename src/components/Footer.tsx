@@ -1,6 +1,6 @@
 import logo from "../../assets/logo-charlie-certa-preta.png"
 import Image from "next/image"
-import {navLinks} from "./Header"
+import {navLinks} from "../lib/constants"
 import Link from "next/link"
 
 export default function Footer() {
