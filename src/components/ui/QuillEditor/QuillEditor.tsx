@@ -12,7 +12,7 @@ type QuillEditorProps = {
 
 const modules = {
   toolbar: [
-    [{ header: [1, 2, false] }],
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
     ['bold', 'italic', 'underline', 'strike', 'blockquote'],
     [
       { list: 'ordered' },
@@ -20,6 +20,10 @@ const modules = {
       { indent: '-1' },
       { indent: '+1' },
     ],
+
+     [{ 'color': [] }, { 'background': [[],'red', '#cce0f5', '#A3DDCB'] }],          // dropdown with defaults from theme
+  [{ 'font': [] }],
+  [{ 'align': [] }],
     ['link', 'image'],
     ['clean'],
   ],
@@ -38,6 +42,7 @@ const QuillEditor = ({
         theme={'snow'}
         modules={modules}
         value={value}
+        className='h-40 bg-white text-black rounded-lg shadow-md '
         onChange={onChange}
         placeholder={placeholder}
       />

@@ -35,9 +35,9 @@ reset(data)
     <div className='bg-gradient-to-tl from-[#1C1E59] from-10% via-[#181753]  to-[#A3DDCB] to-90% text-white h-screen flex flex-col items-center justify-center p-4'>
       <div className="flex flex-col items-center justify-center  p-4 bg-ciano-5/50 rounded-lg shadow-xl w-full max-w-md">
         <h1 className="text-2xl font-bold text-center">Criar Post</h1>
-      <form onSubmit={ handleSubmit(onSubmit)} className="space-y-4 w-full">
+      <form onSubmit={ handleSubmit(onSubmit)} className="space-y-4 w-full ">
         <Input label="Título" {...register("title")} errorMessage={errors?.title?.message} />
-          {/* <Input type="textarea" className="h-40" label="Conteúdo" {...register("content")} errorMessage={errors?.content?.message} /> */}
+       
         
           <Controller
             name="content"
@@ -46,7 +46,7 @@ reset(data)
               <ReactQuillEditor
              
                 {...field}
-                // className="h-40"
+            
                 placeholder="Escreva o conteúdo do post aqui..."
                 errorMessage={errors?.content?.message}
               />
