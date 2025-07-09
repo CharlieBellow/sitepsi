@@ -1,18 +1,68 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "description": "fgesrgb fdgb dfg fgbf bfgbfg fgfb",  "content": "This is the detailed content of mock post 1.", "views": 100 },
-    { "id": "2", "title": "another title",  "content": "This is the detailed content of mock post 1.", "description": "fgesrgb fdgb dfg fgbf bfgbfg fgfb", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "description": "fgesrgb fdgb dfg fgbf bfgbfg fgfb",
+      "content": "This is the detailed content of mock post 1.",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "content": "This is the detailed content of mock post 1.",
+      "description": "fgesrgb fdgb dfg fgbf bfgbfg fgfb",
+      "views": 200
+    },
+    {
+      "id": "63e5",
+    
+        "title": "teste de título",
+        "content": "<p>teste de descrição </p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>com carcteres</li><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>especiais</li></ol><p><strong>negrito</strong></p>",
+        "description": "dfgdfgd descriçõa",
+        "views": "",
+        "comments": ""
+      
+    },
+    {
+      "id": "fab2",
+    
+        "title": "teste de título",
+        "content": "<p>teste de descrição </p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>com carcteres</li><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>especiais</li></ol><p><strong>negrito</strong></p>",
+        "description": "dfgdfgd descriçõa",
+        "views": "",
+        "comments": ""
+    
+    },
+    {
+      "id": "6cd9",
+      "title": "fgdfg dfgdfgdf gdf dfg",
+      "content": "<p>dfdfdfgh</p><p><br></p><p>dffgdfgdfggbg </p><blockquote>fdgdf dfg dfgdfgdfdfgfdgg</blockquote><p><strong>fgdfg dfgd g</strong></p>",
+      "description": "ghbfbgfdgbfgbfgbfgbf"
+    }
   ],
   "comments": [
-    { "id": "1", "content": "a comment about post 1", "postId": "1",  "author": "User2", "date": "2023-10-01" },
-    { "id": "2", "content": "another comment about post 1", "postId": "1",  "author": "User2", "date": "2023-10-01" }
+    {
+      "id": "1",
+      "content": "a comment about post 1",
+      "postId": "1",
+      "author": "1",
+      "date": "2023-10-01"
+    },
+    {
+      "id": "2",
+      "content": "another comment about post 1",
+      "postId": "1",
+      "author": "1",
+      "date": "2023-10-01"
+    }
   ],
   "users": [
     {
-     "id": "1",
-    "username": "User1",
-    "email": "user@email.com",
-    "password": "password123"
+      "id": "1",
+      "username": "User1",
+      "email": "user@email.com",
+      "password": "password123"
     }
-]
+  ]
 }

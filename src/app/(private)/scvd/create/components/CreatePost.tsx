@@ -5,12 +5,16 @@ import { Controller, useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/Input"
 import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
+import { postData } from "../../../../../../Utils/api"
 
 const createSchema = Yup.object().shape({
   title: Yup.string().required("Título é obrigatório"),
   content: Yup.string()
     .min(100, "Pelo menos 100 caracteres")
     .required("O conteúdo é obrigatório"),
+  description: Yup.string()
+    .min(3, "Pelo menos 3 caracteres")
+    .required("O descrição é obrigatório"),
 })
 
 type CreateFormValues = Yup.InferType<typeof createSchema>
@@ -19,15 +23,16 @@ type CreateFormValues = Yup.InferType<typeof createSchema>
 export default function CreatePost() {
 
   const { register, handleSubmit, control, reset, formState: { errors } } = useForm<CreateFormValues>({
-    defaultValues: { title: "", content: "" },
+    defaultValues: { title: "", content: "", description: "", },
   resolver: yupResolver(createSchema)
   })
 
-  const onSubmit = (data: CreateFormValues) => {
+  const onSubmit = async (data: CreateFormValues) => {
     
-    console.log(data);
+    await postData(data)
+ 
     
-  
+ 
 reset(data)
   }
 
@@ -53,6 +58,9 @@ reset(data)
             )}
   />
           
+            <Input label="Descrição" {...register("description")} errorMessage={errors?.description?.message} />
+            
+           
         <Button type="submit" className="mt-4">
           Criar  </Button>
     </form>
