@@ -42,7 +42,7 @@ const QuillEditor = ({
         theme={'snow'}
         modules={modules}
         value={value}
-        className='h-40 bg-white text-black rounded-lg shadow-md '
+        className='h-full bg-white text-black rounded-lg shadow-md '
         onChange={onChange}
         placeholder={placeholder}
       />

@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import "../../globals.css"
+import TopHead from "@/components/HomePage"
+import Footer from "@/components/Footer"
 
 
 export const metadata: Metadata = {
@@ -16,10 +18,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className="">
-        <main className="h-screen ">{children}</main>
-      </body>
-    </html>
+   <html lang="pt-BR">
+         <body className="">
+           <TopHead />
+           <main className="h-screen relative overflow-hidden">{children}
+           </main>
+           <Footer />
+         </body>
+       </html>
   )
 }
