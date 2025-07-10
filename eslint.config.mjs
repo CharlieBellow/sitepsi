@@ -1,18 +1,18 @@
-import js from '@eslint/js'
-import nextPlugin from '@next/eslint-plugin-next'
-import { globalIgnores } from 'eslint/config'
-import pluginReact from 'eslint-plugin-react'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import js from "@eslint/js"
+import nextPlugin from "@next/eslint-plugin-next"
+import pluginReact from "eslint-plugin-react"
+import { globalIgnores } from "eslint/config"
+import globals from "globals"
+import tseslint from "typescript-eslint"
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     plugins: {
-      '@next/next': nextPlugin,
+      "@next/next": nextPlugin,
       react: pluginReact,
     },
 
@@ -29,13 +29,13 @@ export default [
     },
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
     },
   },
 
   {
-    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -44,36 +44,36 @@ export default [
     },
   },
   globalIgnores([
-    'dist/',
-    'build/',
-    '.vscode/',
-    '.history/',
-    'coverage/',
-    'node_modules/',
-    'public/',
-    '.husky/',
-    '.next/',
+    "dist/",
+    "build/",
+    ".vscode/",
+    ".history/",
+    "coverage/",
+    "node_modules/",
+    "public/",
+    ".husky/",
+    ".next/",
   ]),
 
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
+    files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       parserOptions: {
         ecmaFeatures: { jsx: true },
       },
     },
     rules: {
-      'react/jsx-filename-extension': [
-        'error',
-        { extensions: ['.js', '.jsx', '.tsx'] },
+      "react/jsx-filename-extension": [
+        "error",
+        { extensions: [".js", ".jsx", ".tsx"] },
       ],
-      'react/react-in-jsx-scope': 'off',
-      'no-console': 'warn',
+      "react/react-in-jsx-scope": "off",
+      "no-console": "warn",
     },
 
     settings: {
       react: {
-        version: 'detect',
+        version: "detect",
       },
     },
   },
