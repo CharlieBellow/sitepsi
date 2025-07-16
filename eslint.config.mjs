@@ -1,9 +1,9 @@
-import js from "@eslint/js"
-import nextPlugin from "@next/eslint-plugin-next"
-import pluginReact from "eslint-plugin-react"
-import { globalIgnores } from "eslint/config"
-import globals from "globals"
-import tseslint from "typescript-eslint"
+import js from "@eslint/js";
+import nextPlugin from "@next/eslint-plugin-next";
+import pluginReact from "eslint-plugin-react";
+import { globalIgnores } from "eslint/config";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -19,6 +19,7 @@ export default [
     rules: {
       ...pluginReact.configs.recommended.rules,
       ...nextPlugin.configs.recommended.rules,
+
       // Se você estiver usando o App Router e quiser as regras de Core Web Vitals, descomente a linha abaixo:
       // ...nextPlugin.configs['core-web-vitals'].rules,
     },
@@ -63,12 +64,11 @@ export default [
       },
     },
     rules: {
-      "react/jsx-filename-extension": [
-        "error",
-        { extensions: [".js", ".jsx", ".tsx"] },
-      ],
+      "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx", ".tsx"] }],
       "react/react-in-jsx-scope": "off",
       "no-console": "warn",
+      "react/jsx-no-target-blank": "off",
+      "react/prop-types": "off",
     },
 
     settings: {
@@ -77,7 +77,7 @@ export default [
       },
     },
   },
-]
+];
 
 /*
 Lista de commits:
