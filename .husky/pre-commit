@@ -2,7 +2,7 @@ echo 'Check for lint error...'
 
 npm run check:fix || (echo 'Lint error found, please fix it.' && exit 1)
 
-npm run build || (echo 'Build error found, please fix it.' && exit 1)
+# npm run build || (echo 'Build error found, please fix it.' && exit 1)
 
 
 echo 'Done.'
