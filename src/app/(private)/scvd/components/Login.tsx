@@ -1,4 +1,5 @@
 "use client"
+import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/Input"
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -43,7 +44,7 @@ export function Login() {
         <Input
           type="password" label="Senha" {...register("password")} errorMessage={errors?.password?.message}/>
 
-        <Button type="submit" className="mt-4 text-ciano-6" >
+          <Button onClick={() => signIn("github", { callbackUrl: '/scvd/posts' })} type="submit" className="mt-4 text-ciano-6" >
           Entrar
         </Button>
       </form>
