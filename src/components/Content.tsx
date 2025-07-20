@@ -10,6 +10,11 @@ import { Post } from "../../Utils/Types/types";
 export async function Content() {
   const posts = await getData();
 
+  // const data = await getNeonData()
+
+
+  
+
   return (
     <div className='grid grid-cols-1 pt-10 h-full my-5'>
       <Grid title='Blog'>

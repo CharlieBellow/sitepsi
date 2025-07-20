@@ -16,7 +16,9 @@ import  Image  from "next/image";
 export default async function ListPostsPage() {
   const session = await getServerSession();
 
-  if (!session) redirect("/");
+  
+
+  if (!session) redirect("/scvd");
 
   return (
     <div className='bg-ciano-3/10 rounded-lg shadow-xl w-1/2 items-center justify-center p-4 flex flex-col gap-4'>

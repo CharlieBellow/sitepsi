@@ -1,6 +1,7 @@
 
 
 import { Post } from "./Types/types"
+import { neon } from "@neondatabase/serverless";
 
 const baseURL = 'http://localhost:3001/'
 
@@ -10,6 +11,18 @@ const baseURL = 'http://localhost:3001/'
 // AKfycbx7fbQvNlp-jq8U4-Szt0wND1pjIdzhRL0OpRw6D-mXD73yvFxmggNCm3FXX1PgQET0pQ
 
 // const baseURL = 'https://script.google.com/macros/s/AKfycbw9s0TZp7B71Cm7oP_RGh6BttZeq32Pdb0ufKZZ5LO9P0vxvC1OuJ3Za5TDnxxitrscFQ/exec'
+
+// app/actions.ts
+
+
+export async function getNeonData() {
+    const sql = neon(process.env.DATABASE_URL!);
+    const data = await sql`select * from posts`;
+    return data;
+}
+
+
+
 
 export async function getData() : Promise<Post[]> {
   const data = await fetch(`${baseURL}posts`)
