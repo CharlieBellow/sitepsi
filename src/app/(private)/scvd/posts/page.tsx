@@ -9,14 +9,16 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+import { EditPostDialog } from "@/app/(private)/scvd/posts/components/EditPost";
 import { getServerSession } from "next-auth";
+import Image from "next/image";
 import { redirect } from "next/navigation";
-import  Image  from "next/image";
+import { getNeonData } from "../../../../../Utils/api";
 
 export default async function ListPostsPage() {
   const session = await getServerSession();
 
-  
+  const posts = await getNeonData();
 
   if (!session) redirect("/scvd");
 
@@ -24,8 +26,7 @@ export default async function ListPostsPage() {
     <div className='bg-ciano-3/10 rounded-lg shadow-xl w-1/2 items-center justify-center p-4 flex flex-col gap-4'>
       <p>{session?.user?.name}</p>
       {session.user?.image && (
-
-      <Image src={session?.user?.image} alt="foto" width={100} height={100} />
+        <Image src={session?.user?.image} alt='foto' width={100} height={100} />
       )}
       <ButtonLogout />
       <Table className=''>
@@ -39,12 +40,19 @@ export default async function ListPostsPage() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className='font-medium'>INV001</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Credit Card</TableCell>
-            <TableCell className='text-right'>$250.00</TableCell>
-          </TableRow>
+          {posts.map((post) => (
+            <TableRow key={post.id}>
+              <TableCell className='font-medium'>{post.title}</TableCell>
+              <TableCell className='font-medium'>{post.description}</TableCell>
+              <TableCell className='font-medium'>{post.views}</TableCell>
+              <EditPostDialog
+                id={post.id}
+                title={post.title}
+                description={post.description}
+                views={post.views}
+              />
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>

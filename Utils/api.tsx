@@ -20,6 +20,35 @@ export async function getNeonData() {
     const data = await sql`select * from posts`;
     return data;
 }
+// export async function editNeonData(data: {id: string, title: string, description: string, views: number}) {
+//     const sql = neon(process.env.DATABASE_URL!);
+//     const editData = await sql`update posts set title = ${data.title} where id = ${data.id}`;
+//     // const editData = await sql`insert   into posts (title) values (${data.title}) where id = ${data.id}`;
+//     return editData;
+// }
+
+export async function updatePostApi(postData: { id: number; title: string }) {
+  try {
+    const response = await fetch(`/api/posts/${postData.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: postData.title }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to update post via API.");
+    }
+
+    return await response.json(); // Ou apenas retornar true se não precisar de dados
+  } catch (error) {
+    alert(`Error calling update post API::, ${error}`);
+
+    throw error; // Re-lança o erro para ser tratado no componente
+  }
+}
 
 
 

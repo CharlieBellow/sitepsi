@@ -17,6 +17,9 @@ importers:
       '@neondatabase/serverless':
         specifier: github:neondatabase/serverless
         version: https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93
+      '@radix-ui/react-dialog':
+        specifier: ^1.1.14
+        version: 1.1.14(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.15
         version: 2.1.15(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -69,7 +72,7 @@ importers:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
       react-hook-form:
-        specifier: ^7.59.0
+        specifier: ^7.60.0
         version: 7.60.0(react@19.1.0)
       react-icons:
         specifier: ^5.5.0
