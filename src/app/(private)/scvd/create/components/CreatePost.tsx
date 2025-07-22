@@ -34,7 +34,8 @@ export default function CreatePost() {
   const onSubmit = async (data: CreateFormValues) => {
     await postData(data)
 
-    reset(data)
+
+    reset()
   }
 
   return (

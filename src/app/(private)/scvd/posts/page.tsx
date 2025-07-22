@@ -1,35 +1,20 @@
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
+import { columns } from "@/app/(private)/scvd/posts/components/columns"
+import { getData } from "../../../../../Utils/api"
 
-export default function ListPostsPage() {
+
+import { DataTable } from "@/app/(private)/scvd/posts/components/DataTable"
+
+export default async function ListPostsPage() {
+  const posts = await getData()
+ 
+  
+
   return (
-    <div className="bg-ciano-3/10 rounded-lg shadow-xl w-1/2 items-center justify-center p-4 flex flex-col gap-4">
-      <Table className="">
-        <TableCaption>A list of your recent invoices.</TableCaption>
-        <TableHeader>
-          <TableRow>
-            <TableHead className="w-[100px]">Invoice</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Method</TableHead>
-            <TableHead className="text-right">Amount</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">INV001</TableCell>
-            <TableCell>Paid</TableCell>
-            <TableCell>Credit Card</TableCell>
-            <TableCell className="text-right">$250.00</TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+    <div className="m-8">
+
+    <div className="bg-ciano-3/10 rounded-lg shadow-xl  items-center justify-center p-4 flex flex-col gap-4">
+     <DataTable columns={columns} data={posts} />
+    </div>
     </div>
   )
 }
