@@ -1,3 +1,37 @@
+// /**
+//  * Cria uma resposta JSON padronizada.
+//  */
+// function createJsonResponse(data) {
+//   return ContentService.createTextOutput(JSON.stringify(data))
+//     .setMimeType(ContentService.MimeType.JSON);
+//   const response = ContentService.createTextOutput(JSON.stringify(data));
+//   response.setMimeType(ContentService.MimeType.JSON);
+//   // Adiciona o cabeçalho CORS para permitir o acesso de qualquer origem.
+//   // Em produção, é recomendado restringir para a URL do seu site,
+//   // por exemplo: .setHeader('Access-Control-Allow-Origin', 'https://seusite.com.br')
+//   response.setHeader('Access-Control-Allow-Origin', '*');
+//   return response;
+// }
+
+// /**
+//   return createJsonResponse({ success: true, message: 'Post deletado com sucesso!' });
+
+
+// /**
+//  * Função para lidar com requisições OPTIONS (CORS preflight).
+//  * Isso é necessário para permitir requisições POST de origens diferentes (como seu localhost ou site em produção).
+//  */
+// function doOptions(e) {
+//   const response = ContentService.createTextOutput();
+//   response.setMimeType(ContentService.MimeType.JSON);
+//   response.setHeader('Access-Control-Allow-Origin', '*'); // Em produção, substitua '*' pela URL do seu site
+//   response.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
+//   response.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+//   return response;
+// }
+
+
+
 // var sheetName = 'POSTS';
 // var scriptProp = PropertiesService.getScriptProperties();
 
@@ -94,9 +128,9 @@
 //     return createJsonResponse({ success: false, message: 'ID do post é obrigatório para atualizar.' });
 //   }
 
-//   var data = sheet.getDataRange().getValues();
-//   var headers = data[0];
-//   var rowIndex = -1;
+  // var data = sheet.getDataRange().getValues();
+  // var headers = data[0];
+  // var rowIndex = -1;
 
 //   for (var i = 1; i < data.length; i++) {
 //     if (String(data[i][0]) === String(id)) {
@@ -138,20 +172,20 @@
 //     }
 //   }
 
-//   if (rowIndex === -1) {
-//     return createJsonResponse({ success: false, message: 'Post não encontrado.' });
-//   }
+  // if (rowIndex === -1) {
+  //   return createJsonResponse({ success: false, message: 'Post não encontrado.' });
+  // }
 
-//   sheet.deleteRow(rowIndex);
-//   return createJsonResponse({ success: true, message: 'Post deletado com sucesso!' });
-// }
-
+  // sheet.deleteRow(rowIndex);
+  // return createJsonResponse({ success: true, message: 'Post deletado com sucesso!' });
 
 
 
-// codigo da implantação:
-// AKfycbwNAG8EYCqXav99Pp2Ye9tZiE6XTe9MJeE-aZ-wabqQgZn3DUiT3xld0yoYBnKMcBx1FA
 
-// app da web
-// https://script.google.com/macros/s/AKfycbwNAG8EYCqXav99Pp2Ye9tZiE6XTe9MJeE-aZ-wabqQgZn3DUiT3xld0yoYBnKMcBx1FA/exec
+
+// // codigo da implantação:
+// // AKfycbwNAG8EYCqXav99Pp2Ye9tZiE6XTe9MJeE-aZ-wabqQgZn3DUiT3xld0yoYBnKMcBx1FA
+
+// // app da web
+// // https://script.google.com/macros/s/AKfycbwNAG8EYCqXav99Pp2Ye9tZiE6XTe9MJeE-aZ-wabqQgZn3DUiT3xld0yoYBnKMcBx1FA/exec
 
