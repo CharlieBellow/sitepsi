@@ -15,7 +15,7 @@ const baseURL = "http://localhost:3001/";
 export async function getNeonData() {
   const sql = neon(process.env.DATABASE_URL!);
   const data = await sql`select * from posts`;
-  return data;
+  return data as Post[];
 }
 // export async function editNeonData(data: {id: string, title: string, description: string, views: number}) {
 //     const sql = neon(process.env.DATABASE_URL!);
@@ -40,6 +40,28 @@ export async function updatePostApi(postData: { id: number; title: string }) {
     }
 
     return await response.json(); // Ou apenas retornar true se não precisar de dados
+  } catch (error) {
+    alert(`Error calling update post API::, ${error}`);
+
+    throw error; // Re-lança o erro para ser tratado no componente
+  }
+}
+export async function deletePostApi( id: number ) {
+  try {
+    const response = await fetch(`/api/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id}),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to update post via API.");
+    }
+
+    return true
   } catch (error) {
     alert(`Error calling update post API::, ${error}`);
 
@@ -88,7 +110,7 @@ export async function postData(post: PostData) {
 
   return data;
 }
-export async function updateData(post: Post) {
+export async function updateData(post: Pick<Post, "id" | "description"| "title" | "content">) {
   const data = await fetch(`${baseURL}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

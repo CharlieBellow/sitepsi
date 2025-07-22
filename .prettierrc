@@ -6,7 +6,7 @@
   "printWidth": 100,
   "proseWrap": "always",
   "quoteProps": "as-needed",
-  "semi": true,
+  "semi": false,
   "singleQuote": false,
   "tabWidth": 2,
   "useTabs": false
