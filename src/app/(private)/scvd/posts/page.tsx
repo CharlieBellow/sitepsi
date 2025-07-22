@@ -45,13 +45,13 @@ export default async function ListPostsPage() {
               <TableCell className='font-medium'>{post.title}</TableCell>
               <TableCell className='font-medium'>{post.description}</TableCell>
               <TableCell className='font-medium'>{post.views}</TableCell>
-              <EditPostDialog
-                id={post.id}
-                title={post.title}
-                description={post.description}
-                views={post.views}
-              />
-            </TableRow>
+          <EditPostDialog
+            id={post.id}
+            title={post.title}
+            description={post.description}
+            views={post.views}
+          />
+        </TableRow>
           ))}
         </TableBody>
       </Table>
