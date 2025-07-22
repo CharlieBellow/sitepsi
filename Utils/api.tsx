@@ -16,7 +16,7 @@ export async function getData() {
   const posts = await data.json()
 
   
-  return (posts)
+  return posts
   
 }
 export async function getPost(id: string) {
@@ -31,7 +31,7 @@ export async function getPost(id: string) {
 }
 
 
-type PostData = Omit<Post, 'id' | 'views' | 'comments'> 
+type PostData = Post 
 
 export async function postData(post: PostData) {
   const data = await fetch(`${baseURL}`, {
@@ -45,7 +45,18 @@ export async function postData(post: PostData) {
     })
   }
   )
-  return (data)
+   if (!data.ok) {
+    // Lança um erro para que o chamador possa tratar a falha.
+    throw new Error(`Falha ao criar post, status: ${data.status}`);
+  }
+
+  // Retorna a resposta JSON se houver, ou a resposta crua.
+  const contentType = data.headers.get("content-type");
+  if (contentType && contentType.includes("application/json")) {
+    return data.json();
+  }
+
+  return data;
 
 }
 export async function updateData(post: Post) {

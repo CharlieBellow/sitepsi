@@ -128,9 +128,9 @@
 //     return createJsonResponse({ success: false, message: 'ID do post é obrigatório para atualizar.' });
 //   }
 
-//   var data = sheet.getDataRange().getValues();
-//   var headers = data[0];
-//   var rowIndex = -1;
+  // var data = sheet.getDataRange().getValues();
+  // var headers = data[0];
+  // var rowIndex = -1;
 
 //   for (var i = 1; i < data.length; i++) {
 //     if (String(data[i][0]) === String(id)) {
@@ -172,13 +172,13 @@
 //     }
 //   }
 
-//   if (rowIndex === -1) {
-//     return createJsonResponse({ success: false, message: 'Post não encontrado.' });
-//   }
+  // if (rowIndex === -1) {
+  //   return createJsonResponse({ success: false, message: 'Post não encontrado.' });
+  // }
 
-//   sheet.deleteRow(rowIndex);
-//   return createJsonResponse({ success: true, message: 'Post deletado com sucesso!' });
-// }
+  // sheet.deleteRow(rowIndex);
+  // return createJsonResponse({ success: true, message: 'Post deletado com sucesso!' });
+
 
 
 

@@ -39,16 +39,16 @@ const QuillEditor = ({
   return (
     <div>
       <ReactQuill
-        theme={'snow'}
+        theme={"snow"}
         modules={modules}
         value={value}
-        className='h-full bg-white text-black rounded-lg shadow-md '
+        className='max-h-80 overflow-y-scroll bg-white text-black rounded-lg shadow-md '
         onChange={onChange}
         placeholder={placeholder}
       />
-      {errorMessage && <p className="mt-1 text-sm text-red-500">{errorMessage}</p>}
+      {errorMessage && <p className='mt-1 text-sm text-red-500'>{errorMessage}</p>}
     </div>
-  )
+  );
 }
 
 export default QuillEditor
