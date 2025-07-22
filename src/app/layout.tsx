@@ -1,3 +1,7 @@
+
+
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackServerApp } from "../stack";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -16,12 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
-      <body className=''>
+      <body className=''><StackProvider app={stackServerApp}><StackTheme>
         <main className='h-screen'>
       
           {children}
         </main>
-      </body>
+      </StackTheme></StackProvider></body>
     </html>
   );
 }

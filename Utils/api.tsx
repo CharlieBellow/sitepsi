@@ -1,21 +1,58 @@
+import { neon } from "@neondatabase/serverless";
+import { Post } from "./Types/types";
 
-const baseURL = "http://localhost:3001/"
+const baseURL = "http://localhost:3001/";
 
 /* const baseURL = "https://script.google.com/macros/s/AKfycbwNAG8EYCqXav99Pp2Ye9tZiE6XTe9MJeE-aZ-wabqQgZn3DUiT3xld0yoYBnKMcBx1FA/exec"
  */
 
 // AKfycbx7fbQvNlp-jq8U4-Szt0wND1pjIdzhRL0OpRw6D-mXD73yvFxmggNCm3FXX1PgQET0pQ
 
-// const baseURL = 'https://script.google.com/macros/s/AKfycbwJQA2Nl_CmNm8We4tqII9duyii_f9CuyDxpO-mG_UNZU1OS-QBVjEBmVHCto1fw6tRnA/exec'
+// const baseURL = 'https://script.google.com/macros/s/AKfycbw9s0TZp7B71Cm7oP_RGh6BttZeq32Pdb0ufKZZ5LO9P0vxvC1OuJ3Za5TDnxxitrscFQ/exec'
 
-export async function getData() {
+// app/actions.ts
 
-  const data = await fetch(`${baseURL}/posts`);
+export async function getNeonData() {
+  const sql = neon(process.env.DATABASE_URL!);
+  const data = await sql`select * from posts`;
+  return data;
+}
+// export async function editNeonData(data: {id: string, title: string, description: string, views: number}) {
+//     const sql = neon(process.env.DATABASE_URL!);
+//     const editData = await sql`update posts set title = ${data.title} where id = ${data.id}`;
+//     // const editData = await sql`insert   into posts (title) values (${data.title}) where id = ${data.id}`;
+//     return editData;
+// }
+
+export async function updatePostApi(postData: { id: number; title: string }) {
+  try {
+    const response = await fetch(`/api/posts/${postData.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: postData.title }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to update post via API.");
+    }
+
+    return await response.json(); // Ou apenas retornar true se não precisar de dados
+  } catch (error) {
+    alert(`Error calling update post API::, ${error}`);
+
+    throw error; // Re-lança o erro para ser tratado no componente
+  }
+}
+
+export async function getData(): Promise<Post[]> {
+  const data = await fetch(`${baseURL}posts`);
 
   const posts = await data.json();
 
   return posts;
-
 }
 export async function getPost(id: string) {
   const data = await fetch(`${baseURL}?id=${id}`);
