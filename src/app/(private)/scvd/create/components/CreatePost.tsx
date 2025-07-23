@@ -31,7 +31,7 @@ export default function CreatePost() {
   })
 
   const onSubmit = async (data: CreateFormValues) => {
-    await postData({...data, id: "7", views: 0, comments: []})
+    await postData({...data, id: 7, views: 0, comments: []})
 
     // reset()
   }
