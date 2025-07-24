@@ -1,11 +1,10 @@
-"use client";
+"use client"
 
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Controller, useForm } from "react-hook-form";
-import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup"
+import { Controller, useForm } from "react-hook-form"
+import * as Yup from "yup"
 
-
-import { Button, Input } from "@/components/ui";
+import { Button, Input } from "@/components/ui"
 import {
   Dialog,
   DialogContent,
@@ -14,21 +13,17 @@ import {
   DialogOverlay,
   DialogPortal,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "@/components/ui/dialog"
 
-
-
-import { Post } from "../../../../../../Utils/Types/types";
-import { updateData } from "../../../../../../Utils/api";
-import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor";
-
-
+import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
+import { Post } from "../../../../../../Utils/Types/types"
+import { updatePostApi } from "../../../../../../Utils/api"
 
 type EditGroupDialogProps = {
-  isOpen: boolean;
-  post: Pick<Post, "id" | "description"| "title" | "content">;
-  handleDialogItemOpenChange: (value: boolean) => void;
-};
+  isOpen: boolean
+  post: Pick<Post, "id" | "description" | "title" | "content">
+  handleDialogItemOpenChange: (value: boolean) => void
+}
 
 const formSchema = Yup.object().shape({
   description: Yup.string().min(3, "Pelo menos 3 caracteres").required("Descrição é obrigatória"),
@@ -36,17 +31,10 @@ const formSchema = Yup.object().shape({
   content: Yup.string().min(100, "Pelo menos 100 caracteres").required("é obrigatório"),
 })
 
-type FormValues = Yup.InferType<typeof formSchema>;
+type FormValues = Yup.InferType<typeof formSchema>
 
-export function EditPostDialog({
-  post,
-  isOpen,
-  handleDialogItemOpenChange,
-}: EditGroupDialogProps) {
-  const { id, description, content, title  } = post;
-
-
-
+export function EditPostDialog({ post, isOpen, handleDialogItemOpenChange }: EditGroupDialogProps) {
+  const { id, description, content, title } = post
 
   const {
     register,
@@ -62,23 +50,22 @@ export function EditPostDialog({
     },
     mode: "onTouched",
     resolver: yupResolver(formSchema),
-  });
+  })
 
   const handleCancel = () => {
-    reset();
-    handleDialogItemOpenChange(false);
-  };
+    reset()
+    handleDialogItemOpenChange(false)
+  }
 
-  const onSubmit = async ({ description, content, title,  }: FormValues) => {
+  const onSubmit = async ({ description, content, title }: FormValues) => {
     try {
-      await updateData({ id, description, content, title });
+      await updatePostApi({ id, description, content, title })
 
-
-      handleDialogItemOpenChange(false);
+      handleDialogItemOpenChange(false)
     } catch (error) {
-      alert(error);
+      alert(`"Erro ao editar o post: ${error} `)
     }
-  };
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={handleDialogItemOpenChange}>

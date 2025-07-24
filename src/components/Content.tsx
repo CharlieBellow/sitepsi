@@ -4,16 +4,14 @@ import Grid from "@/components/Grid";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 
-import { getData } from "../../Utils/api";
+import { getNeonData } from "../../Utils/api";
 import { Post } from "../../Utils/Types/types";
 
 export async function Content() {
-  const posts = await getData();
+  // const posts = await getData();
 
-  // const data = await getNeonData()
+  const posts = await getNeonData()
 
-
-  
 
   return (
     <div className='grid grid-cols-1 pt-10 h-full my-5'>

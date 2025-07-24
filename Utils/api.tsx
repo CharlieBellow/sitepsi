@@ -24,14 +24,14 @@ export async function getNeonData() {
 //     return editData;
 // }
 
-export async function updatePostApi(postData: { id: number; title: string }) {
+export async function updatePostApi(postData: { id: number; title: string, description: string, content: string }) {
   try {
     const response = await fetch(`/api/posts/${postData.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title: postData.title }),
+      body: JSON.stringify({ title: postData.title, description: postData.description, content: postData.content }),
     });
 
     if (!response.ok) {
