@@ -5,7 +5,8 @@ import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Controller, useForm } from "react-hook-form"
 import * as Yup from "yup"
-import { postData } from "../../../../../../Utils/api"
+import { postPostApi } from "../../../../../../Utils/api"
+
 
 const createSchema = Yup.object().shape({
   title: Yup.string().required("Título é obrigatório"),
@@ -24,6 +25,7 @@ export default function CreatePost() {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<CreateFormValues>({
     defaultValues: { title: "", content: "", description: "" },
@@ -31,9 +33,9 @@ export default function CreatePost() {
   })
 
   const onSubmit = async (data: CreateFormValues) => {
-    await postData({...data, id: 7, views: 0, comments: []})
-
-    // reset()
+    await postPostApi({ ...data  })
+alert("Post criado com sucesso!")
+    reset()
   }
 
   return (

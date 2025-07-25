@@ -46,6 +46,28 @@ export async function updatePostApi(postData: { id: number; title: string, descr
     throw error; // Re-lança o erro para ser tratado no componente
   }
 }
+export async function postPostApi(postData: { title: string, description: string, content: string }) {
+  try {
+    const response = await fetch(`/api/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title: postData.title, description: postData.description, content: postData.content }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to post post via API.");
+    }
+
+    return await response.json(); // Ou apenas retornar true se não precisar de dados
+  } catch (error) {
+    alert(`Error calling post post API::, ${error}`);
+
+    throw error; // Re-lança o erro para ser tratado no componente
+  }
+}
 export async function deletePostApi( id: number ) {
   try {
     const response = await fetch(`/api/posts/${id}`, {
