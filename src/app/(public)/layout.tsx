@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang='pt-BR'>
       <body className=''>
         <TopHead />
-        <main className='h-screen relative overflow-hidden'>{children}</main>
+        <main className='min-h-screen relative overflow-hidden'>{children}</main>
         <Footer />
       </body>
     </html>

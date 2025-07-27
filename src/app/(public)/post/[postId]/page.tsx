@@ -1,18 +1,14 @@
-// import { mockPosts } from "../../../../../Utils/Mocks";
-// { params }: { params: { postId: string } }
-export default function pagePost() {
-  // const post = mockPosts.find((mock) => mock.id === params.postId);
-  // if (!post) {
-  //   return <div>Post not found</div>;
-  // }
+import PostComponent from "@/app/(public)/post/[postId]/components/PostComponent"
+import { getPostById } from "../../../../../Utils/api"
+
+export default async function pagePost({ params }: { params: { postId: string } }) {
+  const postId = (await params).postId
+
+  const post = await getPostById(Number(postId))
 
   return (
-    <div className='p-12 flex flex-col w-full justify-center items-center'>
-      <div>
-        <h1 className='text-3xl font-bold mb-4'>post.title</h1>
-        <p className='mb-4'>post.content</p>
-        <div className='text-sm text-ciano-6/75'>Views: post.views</div>
-      </div>
+    <div className='p-12 flex  flex-col w-full  items-center'>
+      <div className="w-full max-w-4xl">{post && <PostComponent post={post} />}</div>
     </div>
-  );
+  )
 }

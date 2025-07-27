@@ -17,6 +17,16 @@ export async function getNeonData() {
   const data = await sql`select * from posts`;
   return data as Post[];
 }
+export async function getPostById(id: number) {
+  const sql = neon(process.env.DATABASE_URL!);
+  const data = await sql`select * from posts where id = ${id}` 
+  if (data.length === 0) {
+    console.error(`Post with id ${id} not found`);
+    throw new Error(`Post with id ${id} not found`);
+   
+  }
+  return  data[0] as Post;
+}
 // export async function editNeonData(data: {id: string, title: string, description: string, views: number}) {
 //     const sql = neon(process.env.DATABASE_URL!);
 //     const editData = await sql`update posts set title = ${data.title} where id = ${data.id}`;

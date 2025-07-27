@@ -13,22 +13,24 @@ const sql = neon(process.env.DATABASE_URL!); // '!' afirma que não será nulo
 export async function PUT(request: NextRequest, { params }: { params: Promise<{ id: number }> }) {
   try {
     const postId = (await params).id
-    const { title } = await request.json() // Pega o novo título do corpo da requisição
+    const { title, description, content } = await request.json() // Pega o novo título do corpo da requisição
 
-    if (!postId || typeof title === "undefined") {
-      return NextResponse.json({ error: "Post ID and title are required." }, { status: 400 })
+    if (!postId || typeof( title || description || content) === "undefined") {
+      return NextResponse.json({ error: "Post ID and postData are required." }, { status: 400 })
     }
 
     // Lógica para atualizar o banco de dados com Neon
     await sql`
       UPDATE posts
-      SET title = ${title}
+      SET title = ${title},
+      description = ${description},
+      content = ${content}
       WHERE id = ${postId}
     `
 
     return NextResponse.json({ message: "Post updated successfully" }, { status: 200 })
   } catch (error) {
-    alert(`Error updating post:, ${error}`)
+    console.error(`Error updating post:, ${error}`)
     return NextResponse.json({ error: "Failed to update post" }, { status: 500 })
   }
 }
