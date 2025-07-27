@@ -29,7 +29,7 @@ export async function Content() {
           )}
 
           <span className='flex items-center  text-ciano-3 hover:underline-offset-1 hover:underline hover:text-ciano-1 cursor-pointer w-fit'>
-            <Link href='/bloglist' className='flex items-center gap-2'>
+            <Link href='/blog' className='flex items-center gap-2'>
               <Plus className=' cursor-pointer' size={18} />
               veja mais
             </Link>
