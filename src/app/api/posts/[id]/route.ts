@@ -30,6 +30,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
     return NextResponse.json({ message: "Post updated successfully" }, { status: 200 })
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(`Error updating post:, ${error}`)
     return NextResponse.json({ error: "Failed to update post" }, { status: 500 })
   }
