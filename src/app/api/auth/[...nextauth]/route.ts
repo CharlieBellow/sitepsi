@@ -29,6 +29,7 @@ const handler = NextAuth({
       if (allowedEmails.includes(user.email)) {
         return true
       } else {
+        // eslint-disable-next-line no-console
         console.warn(`Tentativa de login com email não permitido: ${user.email}`)
         return false
       }
