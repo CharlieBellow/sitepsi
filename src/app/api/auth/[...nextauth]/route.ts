@@ -1,17 +1,15 @@
-import NextAuth from "next-auth";
-import { Pool } from "pg";
-import  PgAdapter  from "@auth/pg-adapter"; 
-import CredentialsProvider from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
+import NextAuth from "next-auth"
+
+import { neon } from "@neondatabase/serverless"
+
+import bcrypt from "bcryptjs"
+import CredentialsProvider from "next-auth/providers/credentials"
 
 // Cria a "piscina" de conexões com o banco de dados
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
 
 const handler = NextAuth({
   // Usa o adaptador do Postgres, que é mais direto
-  adapter: PgAdapter(pool), // MUDANÇA AQUI
+
   session: {
     strategy: "jwt",
   },
@@ -25,36 +23,36 @@ const handler = NextAuth({
 
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
-          throw new Error("Por favor, forneça seu email e senha.");
+          return null
+        }
+
+        const sql = neon(process.env.DATABASE_URL!)
+
+        try {
+          const userResult = await sql`SELECT * FROM "User" WHERE email = ${credentials.email}`
+
+          const user = userResult[0]
+          if (!user) {
+            return null
+          }
+
+          const passwordMatch = await bcrypt.compare(credentials.password, user.password)
+
+          if (passwordMatch) {
+            // Retorna o objeto do usuário para o NextAuth, sem a senha
+            return { id: user.id, name: user.name, email: user.email }
+          } else {
+            // Senha incorreta
+            return null
+          }
+        } catch (error) {
+          // eslint-disable-next-line no-console  
+          console.error("Erro ao conectar ao banco de dados:", error)
+          return null
         }
 
         // 1. Encontrar o usuário no banco de dados
         // Usando a sintaxe direta do `pg`
-        const userQuery = await pool.query('SELECT * FROM "User" WHERE email = $1', [
-          credentials.email,
-        ]);
-
-        const user = userQuery.rows[0];
-
-        if (!user || !user.hashedPassword) {
-          // Não jogue um erro aqui, apenas retorne null para o NextAuth tratar como "usuário ou senha inválidos"
-          return null;
-        }
-
-        // 2. Verificar se a senha está correta
-        const passwordMatch = await bcrypt.compare(credentials.password, user.hashedPassword);
-
-        if (!passwordMatch) {
-          return null; // Senha incorreta
-        }
-
-        // 3. Se tudo estiver certo, retorne o objeto do usuário
-        return {
-          id: user.id,
-          email: user.email,
-          name: user.name,
-          image: user.image,
-        };
       },
     }),
   ],
@@ -64,6 +62,6 @@ const handler = NextAuth({
   secret: process.env.AUTH_SECRET,
   debug: process.env.NODE_ENV === "development",
   // debug: true
-});
+})
 
-export { handler as GET, handler as POST };
+export { handler as GET, handler as POST }

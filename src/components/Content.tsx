@@ -16,14 +16,14 @@ export async function Content() {
   return (
     <div className='grid grid-cols-1 pt-10 h-full my-5'>
       <Grid title='Blog'>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-fit justify-center gap-4'>
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-fit justify-center gap-6'>
           {posts.map(
             (post: Post, index: number) =>
               index < 6 && (
                 <Link key={post.id} href={`/post/${post.id}`} className='w-full'>
-                  <CardBlog key={post.id} title={post.title} description={post.description}>
-                    {post.description}
-                  </CardBlog>
+                  <CardBlog key={post.id} title={post.title} description={post.description}/>
+                   
+                 
                 </Link>
               ),
           )}
