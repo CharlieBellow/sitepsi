@@ -1,63 +1,48 @@
 import NextAuth from "next-auth"
 
-import { neon } from "@neondatabase/serverless"
+import { DrizzleAdapter } from "@auth/drizzle-adapter"
+import GitHubProvider from "next-auth/providers/github"
 
-import bcrypt from "bcryptjs"
-import CredentialsProvider from "next-auth/providers/credentials"
+import { db } from "@/db/index"
 
 // Cria a "piscina" de conexões com o banco de dados
+const allowedEmails = ["charliebftm@gmail.com"]
 
 const handler = NextAuth({
   // Usa o adaptador do Postgres, que é mais direto
+  adapter: DrizzleAdapter(db),
 
-  session: {
-    strategy: "jwt",
-  },
   providers: [
-    CredentialsProvider({
-      name: "Credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null
-        }
-
-        const sql = neon(process.env.DATABASE_URL!)
-
-        try {
-          const userResult = await sql`SELECT * FROM "User" WHERE email = ${credentials.email}`
-
-          const user = userResult[0]
-          if (!user) {
-            return null
-          }
-
-          const passwordMatch = await bcrypt.compare(credentials.password, user.password)
-
-          if (passwordMatch) {
-            // Retorna o objeto do usuário para o NextAuth, sem a senha
-            return { id: user.id, name: user.name, email: user.email }
-          } else {
-            // Senha incorreta
-            return null
-          }
-        } catch (error) {
-          // eslint-disable-next-line no-console  
-          console.error("Erro ao conectar ao banco de dados:", error)
-          return null
-        }
-
-        // 1. Encontrar o usuário no banco de dados
-        // Usando a sintaxe direta do `pg`
-      },
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
     }),
   ],
+  callbacks: {
+    async signIn({ user }) {
+      if (!user.email) {
+        // eslint-disable-next-line no-console
+        console.error("Usuário do GitHub sem email público.")
+        return false
+      }
+
+      if (allowedEmails.includes(user.email)) {
+        return true
+      } else {
+        console.warn(`Tentativa de login com email não permitido: ${user.email}`)
+        return false
+      }
+    },
+    async session({ session, user }) {
+      if (session.user) {
+        session.user.id = user.id
+      }
+      return session
+    },
+  },
   pages: {
     signIn: "/",
+    error: "/api/auth/error",
   },
   secret: process.env.AUTH_SECRET,
   debug: process.env.NODE_ENV === "development",
