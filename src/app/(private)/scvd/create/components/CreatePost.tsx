@@ -29,6 +29,8 @@ export default function CreatePost() {
 
   const onSubmit = async (data: CreateFormValues) => {
     await postPostApi({ ...data })
+    console.log(data);
+    
     alert("Post criado com sucesso!")
     reset()
   }
