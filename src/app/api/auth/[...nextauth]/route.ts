@@ -23,6 +23,7 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ user }) {
+      console.log("DADOS RECEBIDOS DO GITHUB:", { user, account, profile }) // LOG PARA DEBUG
       if (!user.email) {
         // eslint-disable-next-line no-console
         console.error("Usuário do GitHub sem email público.")
