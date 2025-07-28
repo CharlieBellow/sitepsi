@@ -1,5 +1,7 @@
 console.log("--- [auth]/route.ts ARQUIVO CARREGADO ---")
 
+import { db } from "@/db"
+import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import NextAuth from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 
@@ -7,7 +9,7 @@ const allowedEmails = ["charliebftm@gmail.com"]
 
 const handler = NextAuth({
   // O adapter está desligado para este teste final.
-  // adapter: DrizzleAdapter(db),
+  adapter: DrizzleAdapter(db),
 
   session: {
     strategy: "jwt",
