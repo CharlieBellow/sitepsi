@@ -1,5 +1,5 @@
 import PostComponent from "@/app/(public)/post/[postId]/components/PostComponent"
-import { getPostById } from "../../../../../Utils/api"
+import { getPostById } from "../../../../../Utils/getData"
 
 export default async function pagePost({ params }: { params: Promise<{ postId: string }> }) {
   const postId = (await params).postId

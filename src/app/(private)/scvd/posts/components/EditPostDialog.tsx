@@ -17,7 +17,7 @@ import {
 
 import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
 import { Post } from "../../../../../../Utils/Types/types"
-import { updatePostApi } from "../../../../../../Utils/api"
+import { updatePostApi } from "../../../../../../Utils/getData"
 
 type EditGroupDialogProps = {
   isOpen: boolean

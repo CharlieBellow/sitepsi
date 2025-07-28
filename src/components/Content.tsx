@@ -1,17 +1,16 @@
-import CardBlog from "@/components/CardBlog";
-import Grid from "@/components/Grid";
+import CardBlog from "@/components/CardBlog"
+import Grid from "@/components/Grid"
 
-import { Plus } from "lucide-react";
-import Link from "next/link";
+import { Plus } from "lucide-react"
+import Link from "next/link"
 
-import { getNeonData } from "../../Utils/api";
-import { Post } from "../../Utils/Types/types";
+import { getNeonData } from "../../Utils/getData"
+import { Post } from "../../Utils/Types/types"
 
 export async function Content() {
   // const posts = await getData();
 
   const posts = await getNeonData()
-
 
   return (
     <div className='grid grid-cols-1 pt-10 h-full my-5'>
@@ -21,9 +20,7 @@ export async function Content() {
             (post: Post, index: number) =>
               index < 6 && (
                 <Link key={post.id} href={`/post/${post.id}`} className='w-full'>
-                  <CardBlog key={post.id} title={post.title} description={post.description}/>
-                   
-                 
+                  <CardBlog key={post.id} title={post.title} description={post.description} />
                 </Link>
               ),
           )}
@@ -39,5 +36,5 @@ export async function Content() {
 
       {/* <Grid title="Videos" /> */}
     </div>
-  );
+  )
 }

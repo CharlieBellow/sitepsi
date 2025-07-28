@@ -1,62 +1,59 @@
 "use client"
+import { EditPostDialog } from "@/app/(private)/scvd/posts/components/EditPostDialog"
 import { Button } from "@/components/ui/button"
+import { DeleteDialog } from "@/components/ui/DeleteDialog"
 import {
   DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuContent,
   DropdownMenuTrigger,
-  DropdownMenuGroup,
 } from "@/components/ui/dropdown-menu"
 import { List, Pencil, Trash } from "lucide-react"
-import { Post } from "../../../../../../Utils/Types/types"
 import { useCallback, useState } from "react"
-import { EditPostDialog } from "@/app/(private)/scvd/posts/components/EditPostDialog"
-import { DeleteDialog } from "@/components/ui/DeleteDialog"
-import { deletePostApi } from "../../../../../../Utils/api"
-type DataTableAction =  Pick<Post, "id" | "title" | "description" | "content"> 
+import { deletePostApi } from "../../../../../../Utils/getData"
+import { Post } from "../../../../../../Utils/Types/types"
+type DataTableAction = Pick<Post, "id" | "title" | "description" | "content">
 export default function Actions({ id, content, description, title }: DataTableAction) {
-
-  
-    const [dropdownMenuIsOpen, setDropdownMenuIsOpen] = useState(false);
-    const [deleteDialogIsOpen, setDeleteDialogIsOpen] = useState(false);
-    const [editDialogIsOpen, setEditDialogIsOpen] = useState(false);
+  const [dropdownMenuIsOpen, setDropdownMenuIsOpen] = useState(false)
+  const [deleteDialogIsOpen, setDeleteDialogIsOpen] = useState(false)
+  const [editDialogIsOpen, setEditDialogIsOpen] = useState(false)
 
   const hadleRemovePost = async (id: number) => {
     try {
-      await deletePostApi(id);
+      await deletePostApi(id)
     } catch (error) {
-      alert(`Error submitting form:, ${error}`);
+      alert(`Error submitting form:, ${error}`)
     }
   }
 
   const handleEditDialogOpenChange = useCallback(
     (value?: boolean) => {
       if (dropdownMenuIsOpen) {
-        setDropdownMenuIsOpen(false);
+        setDropdownMenuIsOpen(false)
       }
-      setEditDialogIsOpen((prev) => (value ? value : !prev));
+      setEditDialogIsOpen((prev) => (value ? value : !prev))
     },
     [dropdownMenuIsOpen],
-  );
-  
+  )
 
   const handleDeleteDialogOpenChange = useCallback(
     (value?: boolean) => {
       if (dropdownMenuIsOpen) {
-        setDropdownMenuIsOpen(false);
+        setDropdownMenuIsOpen(false)
       }
-      setDeleteDialogIsOpen((prev) => (value ? value : !prev));
+      setDeleteDialogIsOpen((prev) => (value ? value : !prev))
     },
     [dropdownMenuIsOpen],
-  );
+  )
 
   return (
     <div className='flex w-full justify-end pr-4'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button  size='sm' className='w-fit text-ciano-4 hover:text-ciano-1'>
+          <Button size='sm' className='w-fit text-ciano-4 hover:text-ciano-1'>
             <List className='size-4' />
           </Button>
         </DropdownMenuTrigger>
@@ -95,5 +92,5 @@ export default function Actions({ id, content, description, title }: DataTableAc
         text='Essa ação não poderá ser desfeita. Remova todos os Sub Grupos e serviços antes de deletar o Grupo.'
       />
     </div>
-  );
+  )
 }

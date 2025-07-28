@@ -1,3 +1,5 @@
+console.log("--- [auth]/route.ts ARQUIVO CARREGADO ---")
+
 import NextAuth from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 
