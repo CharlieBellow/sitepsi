@@ -1,12 +1,10 @@
 import NextAuth from "next-auth"
-
 import GitHubProvider from "next-auth/providers/github"
 
-// Cria a "piscina" de conexões com o banco de dados
 const allowedEmails = ["charliebftm@gmail.com"]
 
 const handler = NextAuth({
-  // Usa o adaptador do Postgres, que é mais direto
+  // O adapter está desligado para este teste final.
   // adapter: DrizzleAdapter(db),
 
   session: {
@@ -14,44 +12,33 @@ const handler = NextAuth({
   },
   providers: [
     GitHubProvider({
-      clientId: process.env.GITHUB_ID!,
-      clientSecret: process.env.GITHUB_SECRET!,
+      clientId: process.env.GITHUB_ID,
+      clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
   callbacks: {
-    async signIn({ user, account, profile }) {
-      // eslint-disable-next-line no-console
-      console.log("!!! SUCESSO: O CALLBACK SIGNIN FOI ALCANÇADO !!!")
-      // eslint-disable-next-line no-console
-      console.log("DADOS RECEBIDOS DO GITHUB:", { user, account, profile }) // LOG PARA DEBUG
+    async signIn({ user }) {
+      // Este é o único log que importa agora.
+      console.log("!!! TENTATIVA DE SIGNIN !!! Email do usuário:", user.email)
+
       if (!user.email) {
-        // eslint-disable-next-line no-console
-        console.error("Usuário do GitHub sem email público.")
-        return true
+        console.error("Login rejeitado: Usuário do GitHub sem email público.")
+        return false // Rejeita o login se não houver email
       }
 
+      // LÓGICA CORRIGIDA:
+      // Se o email estiver na lista, permita o login.
       if (allowedEmails.includes(user.email)) {
-        return false
+        console.log(`Login permitido para: ${user.email}`)
+        return true // PERMITE o login
       } else {
-        // eslint-disable-next-line no-console
-        console.warn(`Tentativa de login com email não permitido: ${user.email}`)
-        return false
+        console.warn(`Login REJEITADO para email não permitido: ${user.email}`)
+        return false // REJEITA o login
       }
     },
-    async session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id
-      }
-      return session
-    },
-  },
-  pages: {
-    signIn: "/",
-    error: "/api/auth/error",
   },
   secret: process.env.AUTH_SECRET,
-  // debug: process.env.NODE_ENV === "development",
-  debug: true,
+  debug: true, // Força o debug em todos os ambientes
 })
 
 export { handler as GET, handler as POST }
