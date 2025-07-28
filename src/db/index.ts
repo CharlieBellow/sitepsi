@@ -3,7 +3,10 @@ import { drizzle } from "drizzle-orm/neon-http"
 import * as schema from "./schema"
 // LOG DE DEBUG 1: Verificar se a variável de ambiente está sendo lida.
 // eslint-disable no-console
-console.log("Tentando conectar ao banco de dados com a URL:", process.env.DATABASE_URL ? "URL Encontrada" : "URL NÃO ENCONTRADA");
+console.log(
+  "Tentando conectar ao banco de dados com a URL:",
+  process.env.DATABASE_URL ? "URL Encontrada" : "URL NÃO ENCONTRADA",
+)
 let sql
 try {
   sql = neon(process.env.DATABASE_URL!)
