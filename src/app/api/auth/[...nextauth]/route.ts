@@ -1,17 +1,14 @@
 import NextAuth from "next-auth"
 
-import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import GitHubProvider from "next-auth/providers/github"
-
-import { db } from "@/db/index"
 
 // Cria a "piscina" de conexões com o banco de dados
 const allowedEmails = ["charliebftm@gmail.com"]
 
 const handler = NextAuth({
   // Usa o adaptador do Postgres, que é mais direto
-  adapter: DrizzleAdapter(db),
- 
+  // adapter: DrizzleAdapter(db),
+
   session: {
     strategy: "jwt",
   },
@@ -24,15 +21,17 @@ const handler = NextAuth({
   callbacks: {
     async signIn({ user, account, profile }) {
       // eslint-disable-next-line no-console
+      console.log("!!! SUCESSO: O CALLBACK SIGNIN FOI ALCANÇADO !!!")
+      // eslint-disable-next-line no-console
       console.log("DADOS RECEBIDOS DO GITHUB:", { user, account, profile }) // LOG PARA DEBUG
       if (!user.email) {
         // eslint-disable-next-line no-console
         console.error("Usuário do GitHub sem email público.")
-        return false
+        return true
       }
 
       if (allowedEmails.includes(user.email)) {
-        return true
+        return false
       } else {
         // eslint-disable-next-line no-console
         console.warn(`Tentativa de login com email não permitido: ${user.email}`)
