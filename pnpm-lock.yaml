@@ -14,15 +14,12 @@ importers:
       '@auth/drizzle-adapter':
         specifier: ^1.10.0
         version: 1.10.0
-      '@auth/neon-adapter':
-        specifier: ^1.10.0
-        version: 1.10.0
       '@hookform/resolvers':
         specifier: ^5.1.1
         version: 5.2.0(react-hook-form@7.61.1(react@19.1.0))
       '@neondatabase/serverless':
-        specifier: github:neondatabase/serverless
-        version: https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93
+        specifier: ^1.0.1
+        version: 1.0.1
       '@radix-ui/react-dialog':
         specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -58,7 +55,7 @@ importers:
         version: 17.2.1
       drizzle-orm:
         specifier: ^0.44.3
-        version: 0.44.3(@neondatabase/serverless@https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93)(@types/pg@8.15.4)(kysely@0.28.3)(pg@8.16.3)
+        version: 0.44.3(@neondatabase/serverless@1.0.1)(@types/pg@8.15.4)(kysely@0.28.3)(pg@8.16.3)
       json-server:
         specifier: ^1.0.0-beta.3
         version: 1.0.0-beta.3
@@ -105,12 +102,6 @@ importers:
         specifier: ^1.6.1
         version: 1.6.1
     devDependencies:
-      '@auth/kysely-adapter':
-        specifier: ^1.10.0
-        version: 1.10.0(kysely@0.28.3)
-      '@auth/pg-adapter':
-        specifier: ^1.10.0
-        version: 1.10.0(pg@8.16.3)
       '@commitlint/cli':
         specifier: ^19.8.1
         version: 19.8.1(@types/node@20.19.9)(typescript@5.8.3)
@@ -219,19 +210,6 @@ packages:
 
   '@auth/drizzle-adapter@1.10.0':
     resolution: {integrity: sha512-3MKsdAINTfvV4QKev8PFMNG93HJEUHh9sggDXnmUmriFogRf8qLvgqnPsTlfUyWcLwTzzrrYjeu8CGM+4IxHwQ==}
-
-  '@auth/kysely-adapter@1.10.0':
-    resolution: {integrity: sha512-2axVRCLk5AZQYyxeMhJE8dgDbOBrEDXlJyq43Jcpe57BVc3CT/+S+eAK7pWwnAfG+6zyB0BOY10edf53NA+3UA==}
-    peerDependencies:
-      kysely: ^0.27.5
-
-  '@auth/neon-adapter@1.10.0':
-    resolution: {integrity: sha512-KuwialF1LrM5AZOzGurw6OUfeO/sW1ZAQirceYuxzpiVPvUJCeOPHQro0vcvD29JmdpWh5XegnEbRHXtVXROPg==}
-
-  '@auth/pg-adapter@1.10.0':
-    resolution: {integrity: sha512-OboyonQON2iRiB6tRsjQSl3N5F5mBnAgDVYbM9HOBA+hOmPsq2dxWL2koZhZWPrC/cI8eqrffcEgR3rJv3i9zA==}
-    peerDependencies:
-      pg: ^8
 
   '@babel/code-frame@7.27.1':
     resolution: {integrity: sha512-cjQ7ZlQ0Mv3b47hABuTevyTuYN4i+loJKGeV9flcCgIK37cCXRh+L1bd3iBHlynerhQ7BhCkn2BPbQUL+rGqFg==}
@@ -1487,12 +1465,8 @@ packages:
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
 
-  '@neondatabase/serverless@0.10.4':
-    resolution: {integrity: sha512-2nZuh3VUO9voBauuh+IGYRhGU/MskWHt1IuZvHcJw6GLjDgtqj/KViKo7SIrLdGLdot7vFbiRRw+BgEy3wT9HA==}
-
-  '@neondatabase/serverless@https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93':
-    resolution: {tarball: https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93}
-    version: 1.0.1
+  '@neondatabase/serverless@1.0.1':
+    resolution: {integrity: sha512-O6yC5TT0jbw86VZVkmnzCZJB0hfxBl0JJz6f+3KHoZabjb/X08r9eFA+vuY06z1/qaovykvdkrXYq3SPUuvogA==}
     engines: {node: '>=19.0.0'}
 
   '@next/env@15.4.4':
@@ -2421,9 +2395,6 @@ packages:
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
 
-  '@types/pg@8.11.6':
-    resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==}
-
   '@types/pg@8.15.4':
     resolution: {integrity: sha512-I6UNVBAoYbvuWkkU3oosC8yxqH21f4/Jc4DK71JLG3dT2mdlGe1z+ep/LQGXaKaOgcvUrsQoPRqfgtMcvZiJhg==}
 
@@ -3111,7 +3082,6 @@ packages:
 
   drizzle-orm@0.44.3:
     resolution: {integrity: sha512-8nIiYQxOpgUicEL04YFojJmvC4DNO4KoyXsEIqN44+g6gNBr6hmVpWk3uyAt4CaTiRGDwoU+alfqNNeonLAFOQ==}
-    version: 0.44.3
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -4303,9 +4273,6 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  obuf@1.1.2:
-    resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}
-
   oidc-token-hash@5.1.0:
     resolution: {integrity: sha512-y0W+X7Ppo7oZX6eovsRkuzcSM40Bicg2JEJkDJ4irIt1wsYAP5MLSNv+QAogO8xivMffw/9OvV3um1pxXgt1uA==}
     engines: {node: ^10.13.0 || >=12.0.0}
@@ -4396,10 +4363,6 @@ packages:
     resolution: {integrity: sha512-WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw==}
     engines: {node: '>=4.0.0'}
 
-  pg-numeric@1.0.2:
-    resolution: {integrity: sha512-BM/Thnrw5jm2kKLE5uJkXqqExRUY/toLHda65XgFTBTFYZyopbKjBe29Ii3RbkvlsMoFwD+tHeGaCjjv0gHlyw==}
-    engines: {node: '>=4'}
-
   pg-pool@3.10.1:
     resolution: {integrity: sha512-Tu8jMlcX+9d8+QVzKIvM/uJtp07PKr82IUOYEphaWcoBhIYkoHpLXN3qO59nAI11ripznDsEzEv8nUxBVWajGg==}
     peerDependencies:
@@ -4411,10 +4374,6 @@ packages:
   pg-types@2.2.0:
     resolution: {integrity: sha512-qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA==}
     engines: {node: '>=4'}
-
-  pg-types@4.0.2:
-    resolution: {integrity: sha512-cRL3JpS3lKMGsKaWndugWQoLOCoP+Cic8oseVcbr0qhPzYD5DWXK+RZ9LY9wxRf7RQia4SCwQlXk0q6FCPrVng==}
-    engines: {node: '>=10'}
 
   pg@8.16.3:
     resolution: {integrity: sha512-enxc1h0jA/aq5oSDMvqyW3q89ra6XIIDZgCX9vkMrnz5DFTw/Ny3Li2lFQ+pt3L6MCgm/5o2o8HW9hiJji+xvw==}
@@ -4504,36 +4463,17 @@ packages:
     resolution: {integrity: sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==}
     engines: {node: '>=4'}
 
-  postgres-array@3.0.4:
-    resolution: {integrity: sha512-nAUSGfSDGOaOAEGwqsRY27GPOea7CNipJPOA7lPbdEpx5Kg3qzdP0AaWC5MlhTWV9s4hFX39nomVZ+C4tnGOJQ==}
-    engines: {node: '>=12'}
-
   postgres-bytea@1.0.0:
     resolution: {integrity: sha512-xy3pmLuQqRBZBXDULy7KbaitYqLcmxigw14Q5sj8QBVLqEwXfeybIKVWiqAXTlcvdvb0+xkOtDbfQMOf4lST1w==}
     engines: {node: '>=0.10.0'}
-
-  postgres-bytea@3.0.0:
-    resolution: {integrity: sha512-CNd4jim9RFPkObHSjVHlVrxoVQXz7quwNFpz7RY1okNNme49+sVyiTvTRobiLV548Hx/hb1BG+iE7h9493WzFw==}
-    engines: {node: '>= 6'}
 
   postgres-date@1.0.7:
     resolution: {integrity: sha512-suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q==}
     engines: {node: '>=0.10.0'}
 
-  postgres-date@2.1.0:
-    resolution: {integrity: sha512-K7Juri8gtgXVcDfZttFKVmhglp7epKb1K4pgrkLxehjqkrgPhfG6OO8LHLkfaqkbpjNRnra018XwAr1yQFWGcA==}
-    engines: {node: '>=12'}
-
   postgres-interval@1.2.0:
     resolution: {integrity: sha512-9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ==}
     engines: {node: '>=0.10.0'}
-
-  postgres-interval@3.0.0:
-    resolution: {integrity: sha512-BSNDnbyZCXSxgA+1f5UU2GmwhoI0aU5yMxRGO8CdFEcY2BQF9xm/7MqKnYoM1nJDk8nONNWDk9WeSmePFhQdlw==}
-    engines: {node: '>=12'}
-
-  postgres-range@1.1.4:
-    resolution: {integrity: sha512-i/hbxIE9803Alj/6ytL7UHQxRvZkI9O4Sy+J3HGc4F4oo/2eQAjTSNJ0bfxyse3bH0nuVesCk+3IRLaMtG3H6w==}
 
   preact-render-to-string@5.2.6:
     resolution: {integrity: sha512-JyhErpYOvBV1hEPwIxc/fHWXPfnEGdRKxc8gFdAZ7XV4tlzyzG847XAyEZqoDnynP88akM4eaHcSOzNcLWFguw==}
@@ -5249,33 +5189,6 @@ snapshots:
   '@auth/drizzle-adapter@1.10.0':
     dependencies:
       '@auth/core': 0.40.0
-    transitivePeerDependencies:
-      - '@simplewebauthn/browser'
-      - '@simplewebauthn/server'
-      - nodemailer
-
-  '@auth/kysely-adapter@1.10.0(kysely@0.28.3)':
-    dependencies:
-      '@auth/core': 0.40.0
-      kysely: 0.28.3
-    transitivePeerDependencies:
-      - '@simplewebauthn/browser'
-      - '@simplewebauthn/server'
-      - nodemailer
-
-  '@auth/neon-adapter@1.10.0':
-    dependencies:
-      '@auth/core': 0.40.0
-      '@neondatabase/serverless': 0.10.4
-    transitivePeerDependencies:
-      - '@simplewebauthn/browser'
-      - '@simplewebauthn/server'
-      - nodemailer
-
-  '@auth/pg-adapter@1.10.0(pg@8.16.3)':
-    dependencies:
-      '@auth/core': 0.40.0
-      pg: 8.16.3
     transitivePeerDependencies:
       - '@simplewebauthn/browser'
       - '@simplewebauthn/server'
@@ -6603,11 +6516,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.0
     optional: true
 
-  '@neondatabase/serverless@0.10.4':
-    dependencies:
-      '@types/pg': 8.11.6
-
-  '@neondatabase/serverless@https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93':
+  '@neondatabase/serverless@1.0.1':
     dependencies:
       '@types/node': 22.16.5
       '@types/pg': 8.15.4
@@ -7617,12 +7526,6 @@ snapshots:
 
   '@types/parse-json@4.0.2': {}
 
-  '@types/pg@8.11.6':
-    dependencies:
-      '@types/node': 20.19.9
-      pg-protocol: 1.10.3
-      pg-types: 4.0.2
-
   '@types/pg@8.15.4':
     dependencies:
       '@types/node': 20.19.9
@@ -8379,9 +8282,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.3(@neondatabase/serverless@https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93)(@types/pg@8.15.4)(kysely@0.28.3)(pg@8.16.3):
+  drizzle-orm@0.44.3(@neondatabase/serverless@1.0.1)(@types/pg@8.15.4)(kysely@0.28.3)(pg@8.16.3):
     optionalDependencies:
-      '@neondatabase/serverless': https://codeload.github.com/neondatabase/serverless/tar.gz/20240e08e7babac5dca4ec02b9ca3fa541ce7f93
+      '@neondatabase/serverless': 1.0.1
       '@types/pg': 8.15.4
       kysely: 0.28.3
       pg: 8.16.3
@@ -9599,8 +9502,6 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  obuf@1.1.2: {}
-
   oidc-token-hash@5.1.0: {}
 
   openid-client@5.7.1:
@@ -9688,8 +9589,6 @@ snapshots:
 
   pg-int8@1.0.1: {}
 
-  pg-numeric@1.0.2: {}
-
   pg-pool@3.10.1(pg@8.16.3):
     dependencies:
       pg: 8.16.3
@@ -9703,16 +9602,6 @@ snapshots:
       postgres-bytea: 1.0.0
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
-
-  pg-types@4.0.2:
-    dependencies:
-      pg-int8: 1.0.1
-      pg-numeric: 1.0.2
-      postgres-array: 3.0.4
-      postgres-bytea: 3.0.0
-      postgres-date: 2.1.0
-      postgres-interval: 3.0.0
-      postgres-range: 1.1.4
 
   pg@8.16.3:
     dependencies:
@@ -9787,25 +9676,13 @@ snapshots:
 
   postgres-array@2.0.0: {}
 
-  postgres-array@3.0.4: {}
-
   postgres-bytea@1.0.0: {}
 
-  postgres-bytea@3.0.0:
-    dependencies:
-      obuf: 1.1.2
-
   postgres-date@1.0.7: {}
-
-  postgres-date@2.1.0: {}
 
   postgres-interval@1.2.0:
     dependencies:
       xtend: 4.0.2
-
-  postgres-interval@3.0.0: {}
-
-  postgres-range@1.1.4: {}
 
   preact-render-to-string@5.2.6(preact@10.26.9):
     dependencies:

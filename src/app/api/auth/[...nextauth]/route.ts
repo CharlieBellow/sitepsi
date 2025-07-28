@@ -11,7 +11,10 @@ const allowedEmails = ["charliebftm@gmail.com"]
 const handler = NextAuth({
   // Usa o adaptador do Postgres, que é mais direto
   adapter: DrizzleAdapter(db),
-
+ 
+  session: {
+    strategy: "jwt",
+  },
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_ID!,
@@ -46,8 +49,8 @@ const handler = NextAuth({
     error: "/api/auth/error",
   },
   secret: process.env.AUTH_SECRET,
-  debug: process.env.NODE_ENV === "development",
-  // debug: true
+  // debug: process.env.NODE_ENV === "development",
+  debug: true,
 })
 
 export { handler as GET, handler as POST }
