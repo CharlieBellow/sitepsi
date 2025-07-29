@@ -35,3 +35,26 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
     return NextResponse.json({ error: "Failed to update post" }, { status: 500 })
   }
 }
+
+export async function DELETE(request: NextRequest, { params }: { params: Promise<{ id: number }> }) {
+  try {
+    const deleteId = (await params).id
+    // Pega o novo título do corpo da requisição
+
+    if (!deleteId) {
+      return NextResponse.json({ error: "Post ID and postData are required." }, { status: 400 })
+    }
+
+    // Lógica para atualizar o banco de dados com Neon
+    await sql`
+      DELETE FROM posts
+      WHERE id = ${deleteId}
+    `
+
+    return NextResponse.json({ message: "Post deleted successfully" }, { status: 200 })
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error(`Error deleting post:, ${error}`)
+    return NextResponse.json({ error: "Failed to delete post" }, { status: 500 })
+  }
+}

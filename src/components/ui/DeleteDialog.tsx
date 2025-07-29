@@ -62,11 +62,11 @@ export function DeleteDialog({
             <div className='mt-4 p-0'>
               <div className='ml-auto flex w-2/4 flex-col items-center gap-3 lg:flex-row'>
                 <DialogClose asChild>
-                  <Button disabled={isLoading}>
+                  <Button disabled={isLoading} className='bg-ciano-4 hover:bg-ciano-6 text-white'>
                     Cancelar
                   </Button>
                 </DialogClose>
-                <Button type='submit'  onClick={handleDelete} >
+                <Button type='submit' onClick={handleDelete}>
                   Excluir
                 </Button>
               </div>
@@ -75,5 +75,5 @@ export function DeleteDialog({
         </DialogContent>
       </DialogPortal>
     </Dialog>
-  );
+  )
 }

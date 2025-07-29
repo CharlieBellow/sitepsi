@@ -74,17 +74,17 @@ export async function deletePostApi( id: number ) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ id}),
+      body: JSON.stringify({id}),
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.error || "Failed to update post via API.");
+      throw new Error(errorData.error || "Failed to delete post via API.");
     }
 
     return true
   } catch (error) {
-    alert(`Error calling update post API::, ${error}`);
+    alert(`Error calling delete post API::, ${error}`);
 
     throw error; // Re-lança o erro para ser tratado no componente
   }
