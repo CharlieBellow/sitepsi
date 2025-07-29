@@ -53,7 +53,7 @@ export const verificationTokens = pgTable(
   }),
 )
 
-// Sua tabela de Posts que já existe
+
 export const posts = pgTable("posts", {
   id: integer("id").primaryKey(),
   title: text("title").notNull(),

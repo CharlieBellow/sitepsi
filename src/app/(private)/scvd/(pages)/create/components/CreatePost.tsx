@@ -5,7 +5,7 @@ import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Controller, useForm } from "react-hook-form"
 import * as Yup from "yup"
-import { postPostApi } from "../../../../../../Utils/getData"
+import { postPostApi } from "../../../../../../../Utils/getData"
 
 const createSchema = Yup.object().shape({
   title: Yup.string().required("Título é obrigatório"),
@@ -36,7 +36,7 @@ export default function CreatePost() {
   }
 
   return (
-    <div className='flex flex-col items-center justify-center  p-4 bg-ciano-3/10 rounded-lg shadow-xl w-1/2'>
+    <div className='flex flex-col items-center justify-center p-4 bg-ciano-3/10 rounded-lg shadow-xl w-full md:w-1/2'>
       <h1 className='text-2xl font-bold text-center'>Criar Post</h1>
       <form onSubmit={handleSubmit(onSubmit)} className='space-y-4 w-full'>
         <Input

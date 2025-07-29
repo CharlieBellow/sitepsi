@@ -8,14 +8,14 @@ import { getNeonData } from "../../Utils/getData"
 import { Post } from "../../Utils/Types/types"
 
 export async function Content() {
-  // const posts = await getData();
+  
 
   const posts = await getNeonData()
 
   return (
     <div className='grid grid-cols-1 pt-10 h-full my-5'>
       <Grid title='Blog'>
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 w-fit justify-center gap-6'>
+        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-fit justify-center gap-6'>
           {posts.map(
             (post: Post, index: number) =>
               index < 6 && (
@@ -33,8 +33,6 @@ export async function Content() {
           </span>
         </div>
       </Grid>
-
-      {/* <Grid title="Videos" /> */}
     </div>
   )
 }

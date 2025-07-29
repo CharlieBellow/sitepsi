@@ -1,5 +1,8 @@
+import Footer from "@/components/Footer"
+import TopHead from "@/components/HomePage"
 import type { Metadata } from "next"
-import "../../globals.css"
+import "../../../globals.css"
+import { navLinksPrivate } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Psicólogo Charlie",
@@ -16,7 +19,9 @@ export default async function RootLayout({
 }>) {
   return (
     <>
-      <main className='h-screen relative '>{children}</main>
+      <TopHead navLinksList={navLinksPrivate} />
+      <main className='h-screen relative overflow-hidden'>{children}</main>
+      <Footer />
     </>
   )
 }

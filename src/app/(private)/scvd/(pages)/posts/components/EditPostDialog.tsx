@@ -16,8 +16,8 @@ import {
 } from "@/components/ui/dialog"
 
 import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
-import { Post } from "../../../../../../Utils/Types/types"
-import { updatePostApi } from "../../../../../../Utils/getData"
+import { Post } from "../../../../../../../Utils/Types/types"
+import { updatePostApi } from "../../../../../../../Utils/getData"
 
 type EditGroupDialogProps = {
   isOpen: boolean
@@ -78,7 +78,7 @@ export function EditPostDialog({ post, isOpen, handleDialogItemOpenChange }: Edi
           </DialogHeader>
           <div className='m-0 bg-transparent p-0 shadow-none'>
             <div className='mt-8 p-0'>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(onSubmit)} className="max-h-60 lg:max-h-full overflow-y-scroll lg:overflow-hidden">
                 <Input
                   type='text'
                   label='Título'
@@ -102,8 +102,8 @@ export function EditPostDialog({ post, isOpen, handleDialogItemOpenChange }: Edi
                     />
                   )}
                 />
-                <div className='ml-auto mt-10 flex w-2/4 flex-col items-center gap-3 lg:flex-row'>
-                  <Button disabled={isSubmitting} onClick={handleCancel}>
+                <div className='ml-auto mt-10 flex w-full justify-end items-center gap-3 lg:flex-row'>
+                  <Button disabled={isSubmitting} onClick={handleCancel} className="bg-ciano-4 hover:bg-ciano-6 text-white">
                     Cancelar
                   </Button>
                   <Button type='submit' disabled={isSubmitting || !isValid}>

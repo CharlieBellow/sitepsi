@@ -1,5 +1,3 @@
-console.log("--- [auth]/route.ts ARQUIVO CARREGADO ---")
-
 import { db } from "@/db"
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import NextAuth from "next-auth"
@@ -8,7 +6,6 @@ import GitHubProvider from "next-auth/providers/github"
 const allowedEmails = ["charliebftm@gmail.com"]
 
 const handler = NextAuth({
-  // O adapter está desligado para este teste final.
   adapter: DrizzleAdapter(db),
 
   session: {
@@ -23,20 +20,16 @@ const handler = NextAuth({
   callbacks: {
     async signIn({ user }) {
       // Este é o único log que importa agora.
-      console.log("!!! TENTATIVA DE SIGNIN !!! Email do usuário:", user.email)
 
       if (!user.email) {
-        console.error("Login rejeitado: Usuário do GitHub sem email público.")
         return false // Rejeita o login se não houver email
       }
 
       // LÓGICA CORRIGIDA:
       // Se o email estiver na lista, permita o login.
       if (allowedEmails.includes(user.email)) {
-        console.log(`Login permitido para: ${user.email}`)
         return true // PERMITE o login
       } else {
-        console.warn(`Login REJEITADO para email não permitido: ${user.email}`)
         return false // REJEITA o login
       }
     },

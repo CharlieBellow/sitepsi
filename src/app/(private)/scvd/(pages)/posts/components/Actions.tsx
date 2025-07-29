@@ -1,5 +1,5 @@
 "use client"
-import { EditPostDialog } from "@/app/(private)/scvd/posts/components/EditPostDialog"
+import { EditPostDialog } from "@/app/(private)/scvd/(pages)/posts/components/EditPostDialog"
 import { Button } from "@/components/ui/button"
 import { DeleteDialog } from "@/components/ui/DeleteDialog"
 import {
@@ -13,8 +13,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { List, Pencil, Trash } from "lucide-react"
 import { useCallback, useState } from "react"
-import { deletePostApi } from "../../../../../../Utils/getData"
-import { Post } from "../../../../../../Utils/Types/types"
+import { deletePostApi } from "../../../../../../../Utils/getData"
+import { Post } from "../../../../../../../Utils/Types/types"
 type DataTableAction = Pick<Post, "id" | "title" | "description" | "content">
 export default function Actions({ id, content, description, title }: DataTableAction) {
   const [dropdownMenuIsOpen, setDropdownMenuIsOpen] = useState(false)

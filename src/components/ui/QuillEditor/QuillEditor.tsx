@@ -21,7 +21,7 @@ const modules = {
       { indent: '+1' },
     ],
 
-     [{ 'color': [] }, { 'background': [[],'red', '#cce0f5', '#A3DDCB'] }],          // dropdown with defaults from theme
+     [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
   [{ 'font': [] }],
   [{ 'align': [] }],
     ['link', 'image'],

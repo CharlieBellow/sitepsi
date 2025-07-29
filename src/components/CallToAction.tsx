@@ -1,6 +1,6 @@
 export default function CallToAction() {
   return (
-    <div className="px-8 retative text-white space-y-5 sm:space-y-16 md:space-y-16 absolute z-50 text-lg max-w-xs sm:max-w-xl lg:max-w-3xl ">
+    <div className="px-8 retative text-white space-y-5 sm:space-y-16 md:space-y-16 absolute z-50 text-lg max-w-xs sm:max-w-xl lg:max-w-3xl">
       <div className="text-lg">
         <h1 className="text-2xl md:text-4xl font-bold">
           Charlie Bellow de Oliveira Pimentel Silva
@@ -10,7 +10,7 @@ export default function CallToAction() {
         </h2>
       </div>
       <p className="max-w-full text-sm md:text-base lg:text-xl">
-        Mestre em Psicologia, especialista em Acessibilidade, Diersidade e Inclusão. Clínica focada em lidar com questões LGBTQIAPN+, em especial quetões das subjetividades trans e travesti.
+        Mestre em Psicologia, especialista em Acessibilidade, Diversidade e Inclusão. Clínica focada em lidar com questões LGBTQIAPN+, em especial quetões das subjetividades trans e travesti.
       </p>
 
       <div className="flex justify-around w-full flex-col sm:flex-row gap-4">
