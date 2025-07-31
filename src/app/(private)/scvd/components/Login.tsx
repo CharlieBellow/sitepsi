@@ -1,6 +1,6 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { signIn } from "next-auth/react"
+import { signIn } from "@auth/nextjs/react"
 
 export function Login() {
   const handleGitHubLogin = () => {
