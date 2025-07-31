@@ -15,9 +15,7 @@
     "db:push": "drizzle-kit push"
   },
   "dependencies": {
-    "@auth/core": "latest",
-    "@auth/drizzle-adapter": "latest",
-    "@auth/nextjs": "latest",
+    "@auth/drizzle-adapter": "^1.10.0",
     "@hookform/resolvers": "^5.1.1",
     "@neondatabase/serverless": "^1.0.1",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -30,9 +28,10 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.1",
-    "drizzle-orm": "^0.44.3",
+    "drizzle-orm": "^0.44.4",
     "lucide-react": "^0.523.0",
     "next": "^15.2.4",
+    "next-auth": "5.0.0-beta.29",
     "npm": "^11.4.2",
     "quill": "^2.0.3",
     "react": "^18",
