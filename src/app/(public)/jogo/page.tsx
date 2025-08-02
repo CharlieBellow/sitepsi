@@ -1,4 +1,4 @@
-import PainelGame from "@/app/(public)/game/components/PainelGame"
+import PainelGame from "@/app/(public)/jogo/components/PainelGame"
 
 export default function gamePage() {
   return (

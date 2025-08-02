@@ -1,19 +1,20 @@
 export const navLinksPublic = [
   { href: "/", label: "Início" },
-  { href: "/scvd", label: "Autenticação" },
+  { href: "/scvd", label: "Auth" },
+  { href: "/404", label: "404" },
   { href: "/blog", label: "Blog" },
-  { href: "/servicos", label: "Serviços" },
+  { href: "/meusservicos", label: "Serviços" },
   { href: "/sobre", label: "Sobre mim" },
-  { href: "/404", label: "404 - Jogo" },
   { href: "/contato", label: "Contato" },
+  { href: "/primeirasessao", label: "Bem-vindo" },
 ]
 export const navLinksPrivate = [
   { href: "/", label: "Início" },
-  { href: "/scvd", label: "Autenticação" },
+  { href: "/scvd", label: "Auth" },
   { href: "/scvd/posts", label: "Posts List" },
   { href: "/scvd/create", label: "Criar Post" },
   { href: "/sobre", label: "Sobre mim" },
-  { href: "/404", label: "404 - Jogo" },
+  { href: "/404", label: "404" },
   { href: "/contato", label: "Contato" },
 ]
 

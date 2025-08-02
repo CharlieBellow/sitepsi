@@ -6,9 +6,11 @@ export default function TopHead({ navLinksList }: { navLinksList: NavLink }) {
   return (
     <header
       className='overflow-hidden bg-gradient-to-br from-primary relative 
-       to-danger bg-cover'
+       to-danger bg-cover '
     >
-      <Header navLinksList={navLinksList} />
+    
+        <Header navLinksList={navLinksList} />
+     
       <CallToAction />
       <Background />
     </header>

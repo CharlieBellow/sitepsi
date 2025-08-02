@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer"
 import TopHead from "@/components/HomePage"
+import { navLinksPrivate } from "@/lib/constants"
 import type { Metadata } from "next"
 import "../../../globals.css"
-import { navLinksPrivate } from "@/lib/constants"
 
 export const metadata: Metadata = {
   title: "Psicólogo Charlie",
