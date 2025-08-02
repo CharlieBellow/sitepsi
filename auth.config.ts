@@ -16,14 +16,7 @@ export const authOptions: NextAuthOptions = {
     }),
   ],
   callbacks: {
-    authorized({ auth, request: { nextUrl } }) {
-      const isLoggedIn = !!auth?.user
-      const isOnScvd = nextUrl.pathname.startsWith("/scvd")
-      if (isOnScvd) {
-        return isLoggedIn
-      }
-      return true
-    },
+   
     // O tipo do 'user' será inferido corretamente agora que o módulo é encontrado.
     async signIn({ user }) {
       if (!user.email) return false
