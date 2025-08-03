@@ -30,3 +30,11 @@ export const socialMediaLinks = [
   },
   { label: "youtube", href: "https://www.youtube.com/@MestreCharliePsi" },
 ]
+
+export const nextBank = {
+    name: "Banco Next (Bradesco)",
+    agency: "7320",
+    account: "270955-4",
+    type: "Conta Corrente",
+  }
+

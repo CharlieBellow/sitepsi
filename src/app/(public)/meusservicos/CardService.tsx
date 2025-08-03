@@ -1,0 +1,22 @@
+import Subtitle from "@/components/ui/Subtitle"
+import Image, { StaticImageData } from "next/image"
+import { ReactNode } from "react"
+
+type CardServiceProps = {
+  title: string
+  description: string | ReactNode
+  imageSrc: StaticImageData
+  altText: string
+}
+
+export default function CardService({ title, description, imageSrc, altText }: CardServiceProps) {
+  return (
+    <div className='grid grid-cols-2 items-center gap-2 py-6'>
+      <Image src={imageSrc} alt={altText} width={480} height={400} />
+      <div>
+        <Subtitle>{title}</Subtitle>
+        <p className='text-justify text-base lg:text-lg'>{description}</p>
+      </div>
+    </div>
+  )
+}

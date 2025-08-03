@@ -1,3 +1,4 @@
+"use client"
 import {
   Popover,
   PopoverContent,
@@ -35,7 +36,7 @@ export default function Header({ navLinksList }: { navLinksList: NavLink }) {
               <FaBars className='h-4 w-4' />
             </Button>
           </PopoverTrigger>
-          <PopoverContent className='mr-4 w-auto border-primary bg-fundo/95 text-white'>
+          <PopoverContent className='mr-4 w-auto border-primary md:hidden bg-fundo/95 text-white'>
             <nav>
               <ul className='flex flex-col gap-4 p-2'>
                 {navLinksList.map((link) => (

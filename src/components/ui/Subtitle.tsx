@@ -7,5 +7,5 @@ export default function Subtitle({
   children: React.ReactNode | string
   className?: string
 }) {
-  return <h2 className={`text-2xl font-semibold py-4 ${className}`}>{children}</h2>
+  return <h2 className={`text-lg lg:text-2xl font-semibold py-4 ${className}`}>{children}</h2>
 }
