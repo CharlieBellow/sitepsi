@@ -16,7 +16,7 @@ export default function NotFound() {
           mal!
         </p>
         <Link
-          href='/game'
+          href='/jogo'
           className='rounded bg-ciano-3 px-4 py-2 text-fundo transition-colors hover:bg-ciano-1'
         >
           Jogo dos Sentimentos
