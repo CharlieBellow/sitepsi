@@ -6,7 +6,7 @@ export const navLinksPublic = [
   { href: "/meusservicos", label: "Serviços" },
   { href: "/sobre", label: "Sobre mim" },
   { href: "/contato", label: "Contato" },
-  { href: "/primeirasessao", label: "Bem-vindo" },
+  { href: "/bemvindo", label: "Bem-vindo" },
 ]
 export const navLinksPrivate = [
   { href: "/", label: "Início" },
