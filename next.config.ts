@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  
   compress: true,
+  poweredByHeader: false,
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [new URL("https://avatars.githubusercontent.com/u/92690276?v=4")],
     minimumCacheTTL: 60,
   },
