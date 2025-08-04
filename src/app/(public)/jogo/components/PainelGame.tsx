@@ -17,7 +17,7 @@ export default function PainelGame() {
     if (tristezaCount == 16) {
       alert("Você ganhou! Parabéns! Você conseguiu diminuir a tristeza e aumentar a alegria!")
     }
-    console.log(`Tristeza count: ${tristezaCount + 1}`)
+    // console.log(`Tristeza count: ${tristezaCount + 1}`)
   }
   const handleAlegriaClick = () => {
     setTristezaCount(tristezaCount + 1)
@@ -26,8 +26,8 @@ export default function PainelGame() {
       alert("Você teve uma overdose de alegria! Excesso de dopamina também é prejudicial para nossa saude mental. Lamento, você perdeu o jogo!")
       return
     }
-     console.log(`Tristeza count: ${tristezaCount + 1}`)
-    console.log(`Alegria count: ${alegriaCount + 1}`)
+    //  console.log(`Tristeza count: ${tristezaCount + 1}`)
+    // console.log(`Alegria count: ${alegriaCount + 1}`)
   }
 
   const newSizeSadness = 100 - (tristezaCount * 5)

@@ -42,6 +42,8 @@ export default function CarouselImage({ images }: { images: { src: StaticImageDa
               height={250}
               priority={index === 0}
               quality={75}
+              loading={index === 0 ? "eager" : "lazy"}
+              
               placeholder='blur'
               blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
                 '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="[ciano-4/50]"/></svg>',

@@ -9,7 +9,7 @@ export default async function blog() {
       <Title className=' text-ciano-5/70'>Lista de Publicações</Title>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {posts.map((post) => (
-          <Link key={post.id} href={`../post/${post.id}`} className='w-full'>
+          <Link key={post.id} aria-label={`Ir para ${post.title}`} href={`../post/${post.id}`} className='w-full'>
             <div
               key={post.id}
               className='border p-4 rounded-lg shadow-md bg-ciano-3/20 hover:bg-ciano-2/20 transition-colors duration-300'

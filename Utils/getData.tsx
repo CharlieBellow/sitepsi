@@ -14,7 +14,7 @@ export async function getPostById(id: number) {
   const data = await sql`select * from posts where id = ${id}` 
   if (data.length === 0) {
     // eslint-disable-next-line no-console
-    console.error(`Post with id ${id} not found`)
+    // console.error(`Post with id ${id} not found`)
     throw new Error(`Post with id ${id} not found`)
   }
   return  data[0] as Post;
