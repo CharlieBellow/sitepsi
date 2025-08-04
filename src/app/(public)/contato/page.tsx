@@ -1,7 +1,7 @@
-import Subtitle from "@/components/ui/Subtitle"
-import Title from "@/components/ui/Title"
+import Subtitle from "@/src/components/ui/Subtitle"
+import Title from "@/src/components/ui/Title"
 
-import SocialMediaButtons from "@/components/ui/SocialMediaButtons"
+import SocialMediaButtons from "@/src/components/ui/SocialMediaButtons"
 import Link from "next/link"
 import { socialMediaLinks, utilsInformations } from "../../../../Utils/utilsInformations"
 
@@ -24,7 +24,9 @@ export default function contactPage() {
                 <span>SEG à SEX: 07:00 - 20:00 e SÁB: 07:00 - 12:00</span>
                 <span>
                   Para todo o Brasil no Google Meet.{" "}
-                  <Link href='https://wa.me/+5582996008552'>É só agendar!</Link>
+                  <Link href='https://wa.me/+5582996008552' target='_blank'>
+                    É só agendar!
+                  </Link>
                 </span>
               </li>
               <li className='flex flex-col gap-2'>
@@ -32,7 +34,9 @@ export default function contactPage() {
                 <span>SEG, QUA, QUI: 08:00 - 18:00 </span>
                 <span>
                   na cidade de Arapiraca - AL, no
-                  <Link href='https://wa.me/+5582996008552'>endereço</Link>
+                  <Link href='https://wa.me/+5582996008552' target='_blank'>
+                    endereço
+                  </Link>
                 </span>
               </li>
             </ul>
@@ -53,6 +57,14 @@ export default function contactPage() {
           <span className='text-base lg:text-xl'>{utilsInformations.crpProfession}</span>
           <Subtitle className='font-bold'>Abordagem/Linha Teórica:</Subtitle>
           <span className='text-base lg:text-xl'>Psicanálise</span>
+          <Subtitle>Preço da sessão:</Subtitle>
+          <span>
+            {new Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(utilsInformations.price)}{" "}
+            reais. (Valor com base no curto de vida no Estado de Alagoas).
+          </span>
           <Subtitle>Formas de Pagamento:</Subtitle>
           <span>Transferência Bancária; Depósito em conta; Pix; e Boleto.</span>
         </div>
@@ -66,6 +78,13 @@ export default function contactPage() {
         <div className='flex flex-col gap-4 mt-4'>
           <SocialMediaButtons socialMediaLinks={socialMediaLinks} />
         </div>
+        <Subtitle className='text-center mt-4'>
+          Ou se preferir, você pode acessar a página de{" "}
+          <Link href='/perguntasfrequentes' className='text-ciano-5 font-bold'>
+            Perguntas Frequentes
+          </Link>
+          , onde respondo as dúvidas mais comuns sobre meus serviços.
+        </Subtitle>
       </div>
     </div>
   )

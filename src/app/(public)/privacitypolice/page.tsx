@@ -1,12 +1,11 @@
-import Subtitle from "@/components/ui/Subtitle"
-import Title from "@/components/ui/Title"
+import Subtitle from "@/src/components/ui/Subtitle"
+import Title from "@/src/components/ui/Title"
 
 export default function privacyPolicyPage() {
   return (
     <div className='max-w-3xl mx-auto px-4 space-y-5 py-8'>
       <Title>Política de Privacidade</Title>
       <p className='text-justify'>
-      
         A sua privacidade é importante para nós. É política do Psicólogo Charlie respeitar a sua
         privacidade em relação a qualquer informação sua que possamos coletar no site psicólogo
         Charlie, e outros sites que possuímos e operamos. Solicitamos informações pessoais apenas
@@ -14,12 +13,10 @@ export default function privacyPolicyPage() {
         legais, conforme a Lei Geral de Proteção de Dados (LGPD), com o seu conhecimento e
         consentimento. Também informamos por que estamos coletando e como será usado. Apenas retemo
         as informações coletadas pelo tempo necessário para fornecer o serviço solicitado.
-          
-        </p>
-        <p className='text-justify'>
-        Quando
-        armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar perdas e
-        roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados. Não
+      </p>
+      <p className='text-justify'>
+        Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis para evitar
+        perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados. Não
         compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto
         quando exigido por lei. O nosso site pode ter links para sites externos que não são operados
         por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e

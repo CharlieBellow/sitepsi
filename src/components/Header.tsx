@@ -1,17 +1,13 @@
 "use client"
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+import { Popover, PopoverContent, PopoverTrigger } from "@/src/components/ui/popover"
 import Image from "next/image"
-import logo from "../../assets/logo-charlie-certa-verde.png"
+import logo from "@/assets/logo-charlie-certa-verde.png"
 
 import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/src/components/ui/button"
+import { NavLink } from "@/src/lib/constants"
 import { FaBars } from "react-icons/fa"
-import { NavLink } from "@/lib/constants"
 
 export default function Header({ navLinksList }: { navLinksList: NavLink }) {
   return (

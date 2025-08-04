@@ -8,7 +8,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table"
 
-import PaginationTable from "@/app/(private)/scvd/(pages)/posts/components/PaginationTable"
+import PaginationTable from "@/src/app/(private)/scvd/(pages)/posts/components/PaginationTable"
 import {
   Table,
   TableBody,
@@ -16,7 +16,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from "@/src/components/ui/table"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]

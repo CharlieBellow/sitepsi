@@ -1,7 +1,7 @@
 "use client"
 
-import { DataTable } from "@/app/(private)/scvd/(pages)/posts/components/DataTable"
-import { columns } from "@/app/(private)/scvd/(pages)/posts/components/columns"
+import { DataTable } from "@/src/app/(private)/scvd/(pages)/posts/components/DataTable"
+import { columns } from "@/src/app/(private)/scvd/(pages)/posts/components/columns"
 import { Post } from "../../../../../../../Utils/Types/types"
 type TableProps = {
   posts: Post[]

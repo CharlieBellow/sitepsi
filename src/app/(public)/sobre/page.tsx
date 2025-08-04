@@ -1,10 +1,14 @@
-import SocialMediaButtons from "@/components/ui/SocialMediaButtons"
-import Subtitle from "@/components/ui/Subtitle"
-import Title from "@/components/ui/Title"
+import SocialMediaButtons from "@/src/components/ui/SocialMediaButtons"
+import Subtitle from "@/src/components/ui/Subtitle"
+import Title from "@/src/components/ui/Title"
 import Image from "next/image"
 import Link from "next/link"
-import charlie from "../../../../assets/charlie.jpg"
-import { myBirthDate, socialMediaLinks, utilsInformations } from "../../../../Utils/utilsInformations"
+import charlie from "@/assets/charlie.jpg"
+import {
+  myBirthDate,
+  socialMediaLinks,
+  utilsInformations,
+} from "@/Utils/utilsInformations"
 export default function aboutMePage() {
   return (
     <div className='flex flex-col items-center justify-center gap-8 m-8 md:m-24'>

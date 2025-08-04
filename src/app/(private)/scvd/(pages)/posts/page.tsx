@@ -1,4 +1,4 @@
-import TablePosts from "@/app/(private)/scvd/(pages)/posts/components/TablePosts"
+import TablePosts from "@/src/app/(private)/scvd/(pages)/posts/components/TablePosts"
 import { getServerSession } from "next-auth"
 import { redirect } from "next/navigation"
 import { getNeonData } from "../../../../../../Utils/getData"

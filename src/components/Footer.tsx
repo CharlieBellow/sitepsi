@@ -1,4 +1,4 @@
-import { navLinksPublic } from "@/lib/constants"
+import { navLinksPublic } from "@/src/lib/constants"
 import Image from "next/image"
 import logo from "../../assets/logo-charlie-certa-preta.png"
 

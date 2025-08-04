@@ -1,9 +1,8 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
-
-import { Button } from "@/components/ui";
+import { Button } from "@/src/components/ui"
 import {
   Dialog,
   DialogClose,
@@ -13,17 +12,15 @@ import {
   DialogOverlay,
   DialogPortal,
   DialogTitle,
-} from "@/components/ui/dialog";
-
-
+} from "@/src/components/ui/dialog"
 
 type DeleteDialogProps = {
-  isOpen: boolean;
-  id: number;
-  handleDialogItemOpenChange: (value: boolean) => void;
-  handleDialogDelete: (id: number) => void;
-  text?: string;
-};
+  isOpen: boolean
+  id: number
+  handleDialogItemOpenChange: (value: boolean) => void
+  handleDialogDelete: (id: number) => void
+  text?: string
+}
 
 export function DeleteDialog({
   id,
@@ -32,22 +29,20 @@ export function DeleteDialog({
   handleDialogDelete,
   text,
 }: DeleteDialogProps) {
-  const [isLoading, setIsLoading] = useState(false);
-
-
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleDelete = async () => {
     try {
-      setIsLoading(true);
-      await handleDialogDelete(id);
-      alert("Deletado com sucesso");
-      handleDialogItemOpenChange(false);
+      setIsLoading(true)
+      await handleDialogDelete(id)
+      alert("Deletado com sucesso")
+      handleDialogItemOpenChange(false)
     } catch (err) {
-      alert(err);
+      alert(err)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
-  };
+  }
 
   return (
     <Dialog open={isOpen} onOpenChange={handleDialogItemOpenChange}>

@@ -1,7 +1,7 @@
 "use client"
-import { EditPostDialog } from "@/app/(private)/scvd/(pages)/posts/components/EditPostDialog"
-import { Button } from "@/components/ui/button"
-import { DeleteDialog } from "@/components/ui/DeleteDialog"
+import { EditPostDialog } from "@/src/app/(private)/scvd/(pages)/posts/components/EditPostDialog"
+import { Button } from "@/src/components/ui/button"
+import { DeleteDialog } from "@/src/components/ui/DeleteDialog"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,7 +10,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/src/components/ui/dropdown-menu"
 import { List, Pencil, Trash } from "lucide-react"
 import { useCallback, useState } from "react"
 import { deletePostApi } from "../../../../../../../Utils/getData"

@@ -1,6 +1,6 @@
-import Background from "@/components/Background"
-import CallToAction from "@/components/CallToAction"
-import Header from "@/components/Header"
+import Background from "@/src/components/Background"
+import CallToAction from "@/src/components/CallToAction"
+import Header from "@/src/components/Header"
 import { NavLink } from "../lib/constants"
 export default function TopHead({ navLinksList }: { navLinksList: NavLink }) {
   return (

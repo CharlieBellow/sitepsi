@@ -1,12 +1,12 @@
-import Subtitle from "@/components/ui/Subtitle"
-import Title from "@/components/ui/Title"
+import CardService from "@/src/app/(public)/meusservicos/CardService"
+import Subtitle from "@/src/components/ui/Subtitle"
+import Title from "@/src/components/ui/Title"
 import Image from "next/image"
 import orientacao from "../../../../assets/orientacao.jpg"
 import parecer from "../../../../assets/parecer.jpg"
 import personalidade from "../../../../assets/personalidade.jpg"
 import psicoonline from "../../../../assets/pexels-cottonbro-4100661.jpg"
 import laudo from "../../../../assets/testes-pexels-kampus-8430313.jpg"
-import CardService from "@/app/(public)/meusservicos/CardService"
 export default function myServicesPage() {
   return (
     <div className='max-w-[66rem] mx-auto space-y-2 p-8 '>
@@ -15,11 +15,13 @@ export default function myServicesPage() {
         <Subtitle className='text-ciano-6'>Psicoterapia individual (Online)</Subtitle>
         <CardService
           title={"Psicólogo com foco em ansiedade, vício em eletrônicos e pessoas LGBTQIAPN+"}
-          description={"Como psicólogo, meu foco é trabalhar com pessoas (de 18 a 49 anos) que queiram diminuir a ansiedade e ter mais calma e tolerância diante das situações. Atendo também pessoas LGBTQIAPN+ entendendo que essa população precisa de um espaço de escuta e acolhimento seguro e qualificado para suas demandas. Minha atuação é com base na orientação psicanalítica que tem como objetivo investigar os processos mentais reprimidos pelo inconsciente do paciente que geram angústia e ansiedade. O foco principal é interpretar as ações, pensamentos e sonhos do indivíduo. Atualmente ofereço esse serviço apenas na modalidade online."}
+          description={
+            "Como psicólogo, meu foco é trabalhar com pessoas (de 18 a 49 anos) que queiram diminuir a ansiedade e ter mais calma e tolerância diante das situações. Atendo também pessoas LGBTQIAPN+ entendendo que essa população precisa de um espaço de escuta e acolhimento seguro e qualificado para suas demandas. Minha atuação é com base na orientação psicanalítica que tem como objetivo investigar os processos mentais reprimidos pelo inconsciente do paciente que geram angústia e ansiedade. O foco principal é interpretar as ações, pensamentos e sonhos do indivíduo. Atualmente ofereço esse serviço apenas na modalidade online."
+          }
           imageSrc={psicoonline}
           altText={"Psicoterapia individual Online"}
         />
-       
+
         <p className='text-justify text-base lg:text-lg py-6 '>
           A Psicoterapia online funciona da mesma forma da presencial. As sessões são semanais e
           realizadas pelo Google Meet que tem criptografia de ponta a ponta, isso significa que os

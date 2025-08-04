@@ -1,6 +1,6 @@
-import Footer from "@/components/Footer"
-import TopHead from "@/components/HomePage"
-import { navLinksPrivate } from "@/lib/constants"
+import Footer from "@/src/components/Footer"
+import TopHead from "@/src/components/HomePage"
+import { navLinksPrivate } from "@/src/lib/constants"
 import type { Metadata } from "next"
 import "../../../globals.css"
 

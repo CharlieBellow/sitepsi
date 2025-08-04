@@ -1,7 +1,7 @@
 "use client"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/Input"
-import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
+import { Button } from "@/src/components/ui/button"
+import { Input } from "@/src/components/ui/Input"
+import ReactQuillEditor from "@/src/components/ui/QuillEditor/ReactQuillEditor"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { Controller, useForm } from "react-hook-form"
 import * as Yup from "yup"
@@ -29,8 +29,8 @@ export default function CreatePost() {
 
   const onSubmit = async (data: CreateFormValues) => {
     await postPostApi({ ...data })
-    console.log(data);
-    
+    console.log(data)
+
     alert("Post criado com sucesso!")
     reset()
   }

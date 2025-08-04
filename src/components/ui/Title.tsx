@@ -1,10 +1,12 @@
-import { cn } from '@/lib/utils'
-import React from 'react'
+import { cn } from "@/src/lib/utils"
+import React from "react"
 
-export default function Title({ children, className }: { children: React.ReactNode | string, className?: string }) {
-  return (
-    <h1 className={cn(`text-xl lg:text-4xl font-bold py-8 ${className}`, )}>
-      {children}
-    </h1>
-  )
+export default function Title({
+  children,
+  className,
+}: {
+  children: React.ReactNode | string
+  className?: string
+}) {
+  return <h1 className={cn(`text-xl lg:text-4xl font-bold py-8 ${className}`)}>{children}</h1>
 }

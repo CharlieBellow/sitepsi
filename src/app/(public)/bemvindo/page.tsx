@@ -1,8 +1,8 @@
-import { Button } from "@/components/ui"
-import Title from "@/components/ui/Title"
+import { Button } from "@/src/components/ui"
+import Title from "@/src/components/ui/Title"
 import Link from "next/link"
 
-import Subtitle from "@/components/ui/Subtitle"
+import Subtitle from "@/src/components/ui/Subtitle"
 import { nextBank, socialMediaLinks, utilsInformations } from "../../../../Utils/utilsInformations"
 
 export default function firstSessionPage() {
@@ -34,8 +34,14 @@ export default function firstSessionPage() {
           possam ser acordadas legalmente entre psicólogo e paciente a fim de evitar maiores
           transtornos. Para preencher, clique no botão abaixo.
         </p>
-        <Link href='https://forms.gle/ityHLYywf6XqvfDk8' className='block text-center py-8'>
-          <Button className='text-sm lg:text-lg p-6  text-wrap  truncate'>Ficha de Cadastro e Contrato Terapêutico</Button>
+        <Link
+          href='https://forms.gle/ityHLYywf6XqvfDk8'
+          target='_blank'
+          className='block text-center py-8'
+        >
+          <Button className='text-sm lg:text-lg p-6  text-wrap  truncate'>
+            Ficha de Cadastro e Contrato Terapêutico
+          </Button>
         </Link>
       </div>
       <div>
@@ -85,18 +91,18 @@ export default function firstSessionPage() {
         me encontrar por email ou diretamente no{" "}
         <Link className='text-ciano-6' href={socialMediaLinks[0].href}>
           WhatsApp.
-        </Link>{" "} ou no número {utilsInformations.contact.phone}.
-        {" "}Te espero lá!
+        </Link>{" "}
+        ou no número {utilsInformations.contact.phone}. Te espero lá!
       </p>
-   
+
       <div>
         <Subtitle>Horário de Funcionamento</Subtitle>
         <p className='text-base lg:text-lg'>
-          Segunda a Sexta-feira: <p className="font-bold">09:00 às 19:00</p>
+          Segunda a Sexta-feira: <p className='font-bold'>09:00 às 19:00</p>
           <br />
-          Sábado: <p className="font-bold">08:00 às 12:00</p>
+          Sábado: <p className='font-bold'>08:00 às 12:00</p>
           <br />
-          Domingo: <p className="font-bold">Fechado</p>
+          Domingo: <p className='font-bold'>Fechado</p>
         </p>
       </div>
     </div>

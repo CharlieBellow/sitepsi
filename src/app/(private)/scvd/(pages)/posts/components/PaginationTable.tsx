@@ -1,13 +1,13 @@
 "use client"
 
-import { Table } from "@tanstack/react-table"
 import {
   Pagination,
   PaginationContent,
   PaginationItem,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from "@/src/components/ui/pagination"
+import { Table } from "@tanstack/react-table"
 
 interface PaginationTableProps<TData> {
   table: Table<TData>

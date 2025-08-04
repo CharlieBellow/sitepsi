@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { Controller, useForm } from "react-hook-form"
 import * as Yup from "yup"
 
-import { Button, Input } from "@/components/ui"
+import { Button, Input } from "@/src/components/ui"
 import {
   Dialog,
   DialogContent,
@@ -13,9 +13,9 @@ import {
   DialogOverlay,
   DialogPortal,
   DialogTitle,
-} from "@/components/ui/dialog"
+} from "@/src/components/ui/dialog"
 
-import ReactQuillEditor from "@/components/ui/QuillEditor/ReactQuillEditor"
+import ReactQuillEditor from "@/src/components/ui/QuillEditor/ReactQuillEditor"
 import { Post } from "../../../../../../../Utils/Types/types"
 import { updatePostApi } from "../../../../../../../Utils/getData"
 
@@ -78,7 +78,10 @@ export function EditPostDialog({ post, isOpen, handleDialogItemOpenChange }: Edi
           </DialogHeader>
           <div className='m-0 bg-transparent p-0 shadow-none'>
             <div className='mt-8 p-0'>
-              <form onSubmit={handleSubmit(onSubmit)} className="max-h-60 lg:max-h-full overflow-y-scroll lg:overflow-hidden">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className='max-h-60 lg:max-h-full overflow-y-scroll lg:overflow-hidden'
+              >
                 <Input
                   type='text'
                   label='Título'
@@ -103,7 +106,11 @@ export function EditPostDialog({ post, isOpen, handleDialogItemOpenChange }: Edi
                   )}
                 />
                 <div className='ml-auto mt-10 flex w-full justify-end items-center gap-3 lg:flex-row'>
-                  <Button disabled={isSubmitting} onClick={handleCancel} className="bg-ciano-4 hover:bg-ciano-6 text-white">
+                  <Button
+                    disabled={isSubmitting}
+                    onClick={handleCancel}
+                    className='bg-ciano-4 hover:bg-ciano-6 text-white'
+                  >
                     Cancelar
                   </Button>
                   <Button type='submit' disabled={isSubmitting || !isValid}>
