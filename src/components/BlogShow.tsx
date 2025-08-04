@@ -26,7 +26,7 @@ export async function BlogShow() {
           )}
 
           <span className='flex items-center  text-ciano-3 hover:underline-offset-1 hover:underline hover:text-ciano-1 cursor-pointer w-fit'>
-            <Link href='/blog' className='flex items-center gap-2'>
+            <Link href='/blog' className='flex items-center gap-2' aria-label="Veja mais posts no blog">
               <Plus className=' cursor-pointer' size={18} />
               veja mais
             </Link>

@@ -12,6 +12,9 @@ import Autoplay from "embla-carousel-autoplay"
 
 import Image, { StaticImageData } from "next/image"
 export default function CarouselImage({ images }: { images: { src: StaticImageData; alt: string }[] }) {
+  if (!images || images.length === 0) {
+    return <span>Carregando imagens...</span>
+  }
   return (
     <Carousel
       className='w-full max-w-xl mx-auto'
@@ -21,7 +24,7 @@ export default function CarouselImage({ images }: { images: { src: StaticImageDa
       }}
       plugins={[
         Autoplay({
-          delay: 6000,
+          delay: 3000,
         }),
       ]}
     >
@@ -37,6 +40,12 @@ export default function CarouselImage({ images }: { images: { src: StaticImageDa
               alt={image.alt}
               width={400}
               height={250}
+              priority={index === 0}
+              quality={75}
+              placeholder='blur'
+              blurDataURL={`data:image/svg+xml;base64,${Buffer.from(
+                '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="250"><rect width="100%" height="100%" fill="[ciano-4/50]"/></svg>',
+              ).toString("base64")}`}
             />
           </CarouselItem>
         ))}

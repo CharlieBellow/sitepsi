@@ -16,6 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pt-BR'>
+      <head>
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1957293003604124'
+          crossOrigin='anonymous'
+        ></script>
+        <link rel='preconnect' href='https://fonts.googleapis.com' crossOrigin='anonymous' />
+        <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
+      </head>
       <body className=''>
         <main className='h-screen'>{children}</main>
       </body>

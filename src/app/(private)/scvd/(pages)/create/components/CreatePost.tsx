@@ -65,7 +65,7 @@ export default function CreatePost() {
           errorMessage={errors?.description?.message}
         />
 
-        <Button type='submit' className='mt-4'>
+        <Button aria-label="Criar post" type='submit' className='mt-4'>
           Criar{" "}
         </Button>
       </form>

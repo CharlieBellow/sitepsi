@@ -5,5 +5,5 @@ export { default } from "next-auth/middleware"
 // Qualquer tentativa de acessar uma rota que comece com '/scvd'
 // exigirá que o usuário esteja logado.
 export const config = {
-  matcher: ["/scvd/:path*"],
+  matcher: ["/scvd/:path*", "/((?!api|_next/static|_next/image|favicon.ico).*)"],
 }

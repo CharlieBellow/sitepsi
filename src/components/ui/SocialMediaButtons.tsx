@@ -14,16 +14,16 @@ export default function SocialMediaButtons({ socialMediaLinks }: SocialMediaButt
         <Button>Entrar em contato</Button>
       </Link>
       <Link target='_blank' href={socialMediaLinks[0].href} title={socialMediaLinks[0].label}>
-        <Button>Fazer agendamento</Button>
+        <Button >Fazer agendamento</Button>
       </Link>
       <Link target='_blank' href={socialMediaLinks[1].href} title={socialMediaLinks[1].label}>
         <Button>Instagram @mestrecharliepsi</Button>
       </Link>
       <Link target='_blank' href={socialMediaLinks[2].href} title={socialMediaLinks[2].label}>
-        <Button>Código de ética do Psicólogo</Button>
+        <Button >Código de ética do Psicólogo</Button>
       </Link>
       <Link target='_blank' href={socialMediaLinks[3].href} title={socialMediaLinks[3].label}>
-        <Button>Canal no YouTube</Button>
+        <Button >Canal no YouTube</Button>
       </Link>
     </div>
   )

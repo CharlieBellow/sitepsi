@@ -28,7 +28,7 @@ export default function Header({ navLinksList }: { navLinksList: NavLink }) {
       <div className='md:hidden'>
         <Popover>
           <PopoverTrigger asChild>
-            <Button variant='outline' size='icon'>
+            <Button variant='outline' aria-label="Menu" size='icon'>
               <FaBars className='h-4 w-4' />
             </Button>
           </PopoverTrigger>
