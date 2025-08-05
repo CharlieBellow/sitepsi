@@ -47,7 +47,7 @@ export default function Home() {
           sobre meu trabalho, visite meu{" "}
           <Link
             href={socialMediaLinks[1].href}
-            className='text-ciano-5 hover:underline-offset-1 hover:underline'
+            className='text-ciano-4 hover:underline-offset-1 hover:underline'
           >
             {socialMediaLinks[1].label}
           </Link>
@@ -65,7 +65,7 @@ export default function Home() {
       <div className='max-w-[76rem] mx-auto px-4 py-8 items-center'>
         <Subtitle>
           Ainda está na dúvida se terapia é pra você? Veja essa lista com{" "}
-          <Link href='./post/13' className='text-ciano-5 hover:underline-offset-1 hover:underline'>
+          <Link href='./post/13' className='text-ciano-4 hover:underline-offset-1 hover:underline'>
             10 crenças que te impedem de fazer terapia...
           </Link>
         </Subtitle>

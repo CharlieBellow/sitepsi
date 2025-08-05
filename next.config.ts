@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
+    domains: ["sitepsi.vercel.app"],
     remotePatterns: [new URL("https://avatars.githubusercontent.com/u/92690276?v=4")],
     minimumCacheTTL: 60,
     deviceSizes: [640, 750, 828, 1080, 1200],
@@ -30,11 +31,11 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/:path*",
+        source: "/_next/static/css/:css*",
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },

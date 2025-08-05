@@ -13,7 +13,7 @@ export async function getPostById(id: number) {
   const sql = neon(process.env.DATABASE_URL!);
   const data = await sql`select * from posts where id = ${id}` 
   if (data.length === 0) {
-    // eslint-disable-next-line no-console
+     
     // console.error(`Post with id ${id} not found`)
     throw new Error(`Post with id ${id} not found`)
   }

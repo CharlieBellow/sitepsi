@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ message: "Post posted successfully" }, { status: 200 })
   } catch (error) {
-    // eslint-disable-next-line no-console
+     
     // console.error(`Error posting post:, ${error}`)
     alert(error)
     return NextResponse.json({ error: "Failed to post post" }, { status: 500 })
