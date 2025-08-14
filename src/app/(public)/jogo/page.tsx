@@ -3,7 +3,7 @@ import PainelGame from "@/src/app/(public)/jogo/components/PainelGame"
 export default function gamePage() {
   return (
     <div className='bg-ciano-2/20 rounded-lg p-8 m-4 h-full'>
-      <p className='bg-ciano-2/70 text-center lg:text-2xl font-bold p-4 rounded-lg'>
+      <p className='bg-ciano-2/70 text-center lg:text-2xl font-bold p-4 rounded-lg lg:overflow-hidden overflow-y-scroll h-24 lg:h-full'>
         O jogo consiste em tentar clicar nos emojis que representam sentimentos ruins, como
         tristeza, raiva e medo, enquanto evita clicar nos emojis de sentimentos bons, como alegria e
         amor. Quando você clica nos emojis ruins eles diminuem de tamanho. Quanto mais você clicar

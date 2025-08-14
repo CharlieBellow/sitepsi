@@ -27,7 +27,7 @@ const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const checkGameStatus = (tristeza: number, alegria: number) => {
     if (tristeza <= 12 && tristeza >= 7 && alegria <= 12 && alegria >= 7) {
       setGameStatus(1)
-      setStatusMessage("Você ganhou! Parabéns! Você conseguiu equilibrar suas emoções!")
+      setStatusMessage("Você ganhou! Parabéns! Você conseguiu equilibrar suas emoções!  Viu como foi difícil diminuir a tristeza? Com a ajuda de um psicólogo, você consegue diminuir a tristeza muito mais rápido e de forma mais eficaz! Marque uma sessão de terapia.")
       return
     }
     if (tristeza > 20 || tristeza < 1) {
@@ -104,67 +104,70 @@ const [windowSize, setWindowSize] = useState({ width: 0, height: 0 })
   const newSizeHappiness = calculateSize(alegriaCount)
 
   return (
-    <div className='size-full h-[70vh] relative overflow-hidden '>
-      <div className='flex justify-center gap-4 mb-4'>
-        <button
-          onClick={() => setAction("aumentar")}
-          className={`px-4 py-2 rounded-lg ${
-            action === "aumentar" ? "bg-yellow-400 text-ciano-5" : "bg-gray-200 text-gray-700"
-          }`}
+    <div className='size-full h-[70vh] relative overflow-hidden'>
+      <div className='absolute top-0 left-0 w-full z-10 bg-white/90 p-4'>
+        <div className='flex justify-center gap-4 flex-col md:flex-row items-center '>
+          <button
+            onClick={() => setAction("aumentar")}
+            className={`px-4 py-2 rounded-lg   ${
+              action === "aumentar" ? "bg-yellow-400 text-ciano-5" : "bg-gray-200 text-gray-700"
+            }`}
+          >
+            Aumentar
+          </button>
+          <button
+            onClick={() => setAction("diminuir")}
+            className={`px-4 py-2 rounded-lg ${
+              action === "diminuir" ? "bg-ciano-4 text-white" : "bg-gray-200 text-gray-700"
+            }`}
+          >
+            Diminuir
+          </button>
+        </div>
+
+        <div className='text-ciano-5 font-bold text-center'>
+          Ação selecionada: {action === "aumentar" ? "⬆️" : "⬇️"}
+          <br />
+          Placar: {`(Alegria: ${alegriaCount} / Tristeza: ${tristezaCount}).`}
+          Você ganha ao deixar ambos os níveis entre 7 e 12.
+        </div>
+      </div>
+      <div className='absolute top-24 left-0 w-full h-[calc(100%-6rem)] overflow-hidden'>
+        <div
+          style={{
+            position: "absolute",
+            top: `${tristezaPosition.y}%`,
+            left: `${tristezaPosition.x}%`,
+            transition: "all 1s ease-in-out",
+          }}
         >
-          Aumentar
-        </button>
-        <button
-          onClick={() => setAction("diminuir")}
-          className={`px-4 py-2 rounded-lg ${
-            action === "diminuir" ? "bg-ciano-4 text-white" : "bg-gray-200 text-gray-700"
-          }`}
+          <Image
+            src={tristeza}
+            alt='tristeza'
+            width={newSizeSadness}
+            height={150}
+            onClick={handleTristezaClick}
+            className='cursor-pointer'
+          />
+        </div>
+
+        <div
+          style={{
+            position: "absolute",
+            top: `${alegriaPosition.y}%`,
+            left: `${alegriaPosition.x}%`,
+            transition: "all 1s ease-in-out",
+          }}
         >
-          Diminuir
-        </button>
-      </div>
-
-      <div className='text-ciano-5 font-bold text-center'>
-        Ação selecionada: {action === "aumentar" ? "⬆️" : "⬇️"}
-        <br />
-        Placar: {`(Alegria: ${alegriaCount} / Tristeza: ${tristezaCount}).`}
-        Você ganha ao deixar ambos os níveis entre 7 e 12.
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          top: `${tristezaPosition.y}%`,
-          left: `${tristezaPosition.x}%`,
-          transition: "all 1s ease-in-out",
-        }}
-      >
-        <Image
-          src={tristeza}
-          alt='tristeza'
-          width={newSizeSadness}
-          height={150}
-          onClick={handleTristezaClick}
-          className='cursor-pointer'
-        />
-      </div>
-
-      <div
-        style={{
-          position: "absolute",
-          top: `${alegriaPosition.y}%`,
-          left: `${alegriaPosition.x}%`,
-          transition: "all 1s ease-in-out",
-        }}
-      >
-        <Image
-          src={alegria}
-          alt='alegria'
-          width={newSizeHappiness}
-          height={150}
-          onClick={handleAlegriaClick}
-          className='cursor-pointer'
-        />
+          <Image
+            src={alegria}
+            alt='alegria'
+            width={newSizeHappiness}
+            height={150}
+            onClick={handleAlegriaClick}
+            className='cursor-pointer'
+          />
+        </div>
       </div>
 
       {gameStatus !== 0 && (

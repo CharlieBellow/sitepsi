@@ -3,7 +3,7 @@ import Link from "next/link"
 import tristeza from "@/assets/tristeza.png"
 export default function NotFound() {
   return (
-    <div className='flex h-screen flex-col items-center justify-center bg-gradient-to-tl from-[#1C1E59] from-10% via-[#181753]  to-[#A3DDCB] to-90% text-white'>
+    <div className='flex h-screen flex-col items-center justify-center bg-gradient-to-tl from-[#1C1E59] from-10% via-[#181753]  to-[#A3DDCB] to-90% text-white text-center'>
       <Image src={tristeza} alt='Página não encontrada' width={200} height={200} className='mb-6' />
 
       <h2 className='mb-4 text-4xl font-bold'>404 - Página Não Encontrada</h2>
