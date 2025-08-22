@@ -17,8 +17,11 @@ export default function RootLayout({
   return (
     <html lang='pt-BR'>
       <head>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1957293003604124"
-     crossorigin="anonymous"></script>
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1957293003604124'
+          crossOrigin='anonymous'
+        ></script>
         <link rel='dns-prefetch' href='https://sitepsi.vercel.app' />
         <link
           rel='preconnect'
