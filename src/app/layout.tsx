@@ -17,11 +17,6 @@ export default function RootLayout({
   return (
     <html lang='pt-BR'>
       <head>
-        <script
-          async
-          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1957293003604124'
-          crossOrigin='anonymous'
-        ></script>
         <link rel='dns-prefetch' href='https://sitepsi.vercel.app' />
         <link
           rel='preconnect'
@@ -35,6 +30,11 @@ export default function RootLayout({
         <link rel='dns-prefetch' href='https://fonts.googleapis.com' />
       </head>
       <body className=''>
+        <script
+          async
+          src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1957293003604124'
+          crossOrigin='anonymous'
+        ></script>
         <main className='h-screen'>{children}</main>
       </body>
     </html>

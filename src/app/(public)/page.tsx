@@ -48,6 +48,7 @@ export default function Home() {
           <Link
             href={socialMediaLinks[1].href}
             className='text-ciano-4 hover:underline-offset-1 hover:underline'
+            target='_blank'
           >
             {socialMediaLinks[1].label}
           </Link>

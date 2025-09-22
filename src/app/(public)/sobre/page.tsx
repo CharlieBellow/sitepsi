@@ -57,7 +57,7 @@ export default function aboutMePage() {
           serviços de avaliação psicológica e para saber mais sobre esses serviços você pode acessar
           essa{" "}
           <Link
-            href='/myservices'
+            href='/meusservicos'
             title='Página de Serviços'
             className='text-ciano-5 hover:underline'
           >

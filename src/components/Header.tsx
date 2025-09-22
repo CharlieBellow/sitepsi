@@ -11,7 +11,7 @@ import { FaBars } from "react-icons/fa"
 
 export default function Header({ navLinksList }: { navLinksList: NavLink }) {
   return (
-    <div className='relative z-50 flex items-center justify-between p-4'>
+    <div className='relative z-[999] flex items-center justify-between p-4'>
       <Link href='/'>
         <Image src={logo} alt='Logomarca de Charlie' width={120} className='p-2' />
       </Link>
